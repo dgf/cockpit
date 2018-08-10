@@ -4,31 +4,29 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.aplatanao.billing.cockpit.control.Window;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.io.Resource;
 
 @SpringBootApplication
 public class CockpitApplication extends Application {
 
     private ConfigurableApplicationContext context;
 
-    private Window window;
-
     private static String[] args;
 
     @Override
-    public void init() {
+    public void start(Stage primaryStage) {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(CockpitApplication.class);
         context = builder.run(getParameters().getRaw().toArray(args));
-        window = context.getBean(Window.class);
-    }
+        Window window = context.getBean(Window.class);
 
-
-    @Override
-    public void start(Stage primaryStage) {
+        Scene scene = new Scene(window, 800, 600);
+        scene.getStylesheets().add("cockpit.css");
         primaryStage.setTitle("Aplatanao Cockpit");
-        primaryStage.setScene(new Scene(window, 800, 600));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 

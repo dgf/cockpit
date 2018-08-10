@@ -2,7 +2,7 @@ package org.aplatanao.billing.cockpit.models;
 
 import java.net.URL;
 
-public class API {
+public class API extends Data {
 
     private String name;
 
@@ -37,5 +37,10 @@ public class API {
                 "name='" + name + '\'' +
                 ", url=" + url +
                 '}';
+    }
+
+    @Override
+    public String getTitle() {
+        return "API " + name;
     }
 }

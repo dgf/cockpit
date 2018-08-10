@@ -4,20 +4,22 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Window extends VBox {
+public class Window extends BorderPane {
 
     private static final KeyCombination KEYS_NEW_API = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_ANY);
 
     @Autowired
-    public Window(Log log, Actions actions, Graph graph) {
-        getChildren().add(actions);
-        getChildren().add(graph);
-        getChildren().add(log);
+    public Window(Log log, Actions actions, Graph graph, Details details) {
+        setTop(actions);
+        setCenter(graph);
+        setBottom(log);
+        setRight(details);
 
         setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {

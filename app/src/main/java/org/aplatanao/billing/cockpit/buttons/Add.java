@@ -13,7 +13,7 @@ public class Add extends Button {
     @Autowired
     public Add(Log log, Graph graph) {
         setText("+ API");
-        setOnAction(e -> {
+        setOnAction(event -> {
             log.trace("action +");
             new AddAPI().getAPI().ifPresent(api -> {
                 log.info("add " + api);
@@ -21,4 +21,5 @@ public class Add extends Button {
             });
         });
     }
+
 }

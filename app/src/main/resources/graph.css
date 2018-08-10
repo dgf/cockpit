@@ -1,0 +1,17 @@
+node {
+    fill-color: rgb(225, 228, 203);
+    fill-mode: plain;
+    stroke-mode: dashes;
+    stroke-width: 1px;
+    stroke-color: red;
+    size: 20px;
+}
+
+edge {
+    shape: line;
+    size: 0px;
+    stroke-mode: dashes;
+    stroke-width: 1px;
+    stroke-color: red;
+    fill-color: red;
+}
