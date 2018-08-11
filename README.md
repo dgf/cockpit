@@ -22,5 +22,6 @@ You have to build and install the 0.0.1-SNAPSHOT locally.
 
 ## TODOs
 
-- [ ] implement Log TableView with level filter
+- [x] implement Log TableView
+- [ ] implement TableView level filter
 - [ ] test graph layout algorithms
