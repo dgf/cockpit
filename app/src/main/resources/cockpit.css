@@ -3,3 +3,12 @@
     -fx-base: rgb(132, 145, 47);
     -fx-background: rgb(225, 228, 203);
 }
+
+.titled-pane > .title {
+    -fx-background-radius: 0;
+}
+
+.table-view .column-header .label {
+    -fx-alignment: left;
+    -fx-font-size: 12px;
+}
