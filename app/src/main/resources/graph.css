@@ -1,17 +1,26 @@
+/* http://graphstream-project.org/doc/Advanced-Concepts/GraphStream-CSS-Reference/ */
+
+graph {
+    canvas-color: white;
+    fill-mode: gradient-radial;
+    fill-color: white, #EEEEEE;
+    padding: 60px;
+}
+
 node {
-    fill-color: rgb(225, 228, 203);
-    fill-mode: plain;
-    stroke-mode: dashes;
-    stroke-width: 1px;
-    stroke-color: red;
-    size: 20px;
+    shape: freeplane;
+    size: 10px;
+    size-mode: fit;
+    fill-mode: none;
+    stroke-mode: plain;
+    stroke-color: grey;
+    stroke-width: 2px;
+    padding: 5px, 3px;
 }
 
 edge {
-    shape: line;
-    size: 0px;
-    stroke-mode: dashes;
-    stroke-width: 1px;
-    stroke-color: red;
-    fill-color: red;
+    shape: freeplane;
+    size: 1px;
+    fill-color: grey;
+    fill-mode: plain;
 }
