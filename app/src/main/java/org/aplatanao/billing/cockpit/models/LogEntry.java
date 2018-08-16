@@ -1,40 +1,37 @@
 package org.aplatanao.billing.cockpit.models;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class LogEntry {
-    private final SimpleStringProperty dateCol;
-    private final SimpleStringProperty eventCol;
-    private final SimpleStringProperty messageCol;
+    private String date;
+    private String level;
+    private String message;
 
-    public LogEntry(String dateCol, String eventCol, String messageCol) {
-        this.dateCol = new SimpleStringProperty(dateCol);
-        this.eventCol = new SimpleStringProperty(eventCol);
-        this.messageCol = new SimpleStringProperty(messageCol);
+    public LogEntry(String date, String level, String message) {
+        this.date = date;
+        this.level = level;
+        this.message = message;
     }
 
-    public String getDateCol() {
-        return dateCol.get();
+    public String getDate() {
+        return date;
     }
 
-    public void setDateCol(String dateCol) {
-        this.dateCol.set(dateCol);
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getEventCol() {
-        return eventCol.get();
+    public String getLevel() {
+        return level;
     }
 
-    public void setEventCol(String eventCol) {
-        this.eventCol.set(eventCol);
+    public void setLevel(String level) {
+        this.level = level;
     }
 
-    public String getMessageCol() {
-        return messageCol.get();
+    public String getMessage() {
+        return message;
     }
 
-    public void setMessageCol(String messageCol) {
-        this.messageCol.set(messageCol);
+    public void setMessage(String message) {
+        this.message = message;
     }
-
 }
