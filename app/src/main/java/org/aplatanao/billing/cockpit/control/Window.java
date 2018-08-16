@@ -27,7 +27,7 @@ public class Window extends BorderPane {
         setCenter(graph);
 
         setRight(details);
-        setBottom(new TitledPane("Log", log));
+        setBottom(new TitledPane("LogEntry", log));
 
         setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {

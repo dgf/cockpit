@@ -2,12 +2,12 @@ package org.aplatanao.billing.cockpit.models;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Log {
+public class LogEntry {
     private final SimpleStringProperty dateCol;
     private final SimpleStringProperty eventCol;
     private final SimpleStringProperty messageCol;
 
-    public Log(String cDate, String cEvent, String cMsg) {
+    public LogEntry(String cDate, String cEvent, String cMsg) {
         this.dateCol = new SimpleStringProperty(cDate);
         this.eventCol = new SimpleStringProperty(cEvent);
         this.messageCol = new SimpleStringProperty(cMsg);
