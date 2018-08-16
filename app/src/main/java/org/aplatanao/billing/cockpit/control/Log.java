@@ -4,10 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.aplatanao.billing.cockpit.models.LogEntry;
 import org.springframework.stereotype.Component;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 @Component
 public class Log extends LogTable {
@@ -16,12 +14,12 @@ public class Log extends LogTable {
 
     private void log(String level, String message) {
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-
-        data.add(new LogEntry(dateFormat.format(date), level, message));
+        data.add(
+            new LogEntry(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), level, message)
+        );
         setItems(data);
     }
+
 
     public void trace(String message) {
         log("TRACE", message);

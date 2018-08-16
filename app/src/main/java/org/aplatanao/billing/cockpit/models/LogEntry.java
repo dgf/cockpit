@@ -2,6 +2,8 @@ package org.aplatanao.billing.cockpit.models;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.time.LocalDateTime;
+
 public class LogEntry {
     private final SimpleStringProperty dateCol;
     private final SimpleStringProperty eventCol;
