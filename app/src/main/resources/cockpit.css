@@ -8,6 +8,15 @@
     -fx-background-radius: 0;
 }
 
+.combo-box-base {
+    -fx-background-radius: 0;
+    -fx-background-color: white, white, white, white;
+}
+
+.table-view {
+    -fx-border-width: 0;
+}
+
 .table-view .column-header .label {
     -fx-alignment: left;
     -fx-font-size: 12px;
