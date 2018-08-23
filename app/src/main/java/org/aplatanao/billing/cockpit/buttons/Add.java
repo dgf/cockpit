@@ -7,6 +7,9 @@ import org.aplatanao.billing.cockpit.dialogs.AddAPI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 @Component
 public class Add extends Button {
 
@@ -17,7 +20,11 @@ public class Add extends Button {
             log.trace("action +");
             new AddAPI().getAPI().ifPresent(api -> {
                 log.info("add " + api);
-                graph.addAPI(api);
+                try {
+                    graph.addAPI(api);
+                } catch (URISyntaxException | IOException e) {
+                    throw new RuntimeException(e);
+                }
             });
         });
     }

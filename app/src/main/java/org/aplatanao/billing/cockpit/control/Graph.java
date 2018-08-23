@@ -3,7 +3,9 @@ package org.aplatanao.billing.cockpit.control;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import org.aplatanao.billing.cockpit.clients.GraphQL;
 import org.aplatanao.billing.cockpit.models.API;
+import org.aplatanao.billing.cockpit.models.Query;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
 import org.graphstream.ui.fx_viewer.FxDefaultView;
@@ -19,8 +21,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
@@ -44,7 +48,7 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
     }
 
     @Autowired
-    public Graph(Log log, Details details) throws IOException {
+    public Graph(Log log, Details details) throws IOException, URISyntaxException {
         this.log = log;
         this.details = details;
 
@@ -66,9 +70,10 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         setLeftAnchor(view, 0.0);
         setRightAnchor(view, 0.0);
 
-        //addAPI(new API("local", new URL("http://localhost:8080")));
-        addAPI(new API("github", new URL("https://api.github.com/graphql")));
-        addAPI(new API("swapi", new URL("https://graphql.org/swapi-graphql/")));
+        //addAPI(new API("graphloc", new URL("http://api.graphloc.com/")));
+        addAPI(new API("EtMDB", new URL("https://etmdb.com/graphql")));
+        addAPI(new API("gdom", new URL("http://gdom.graphene-python.org/graphql")));
+        addAPI(new API("melody", new URL("https://api.melody.sh/graphql")));
     }
 
     @PreDestroy
@@ -76,19 +81,22 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         viewer.close();
     }
 
-    public void addAPI(API api) {
+    private Node connect(Node node, String child) {
+        String nid = node.getId() + "_" + child;
+        String eid = node.getId() + ">" + nid;
+        Node n = graph.addNode(nid);
+        n.setAttribute("label", child);
+        graph.addEdge(eid, node.getId(), nid);
+        return n;
+    }
+
+    public void addAPI(API api) throws URISyntaxException, IOException {
         log.trace("add node " + api);
         Node node = graph.addNode(api.getName());
         node.setAttribute("api", api);
         node.setAttribute("type", "api");
         node.setAttribute("label", api.getName());
-    }
-
-    private void connect(Node node, String child) {
-        String nid = node.getId() + "_" + child;
-        String eid = node.getId() + ">" + nid;
-        graph.addNode(nid).setAttribute("label", child);
-        graph.addEdge(eid, node.getId(), nid);
+        node.setAttribute("client", new GraphQL(api.getUrl().toURI()));
     }
 
     @Override
@@ -104,8 +112,9 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
 
         Node node = graph.getNode(element.toString());
         Object type = node.getAttribute("type");
+
         if ("api".equals(type)) {
-            API api = (API) node.getAttribute("api");
+            API api = node.getAttribute("api", API.class);
             log.info("add API details " + api);
 
             try {
@@ -114,9 +123,32 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
                 throw new RuntimeException(e);
             }
 
-            connect(node, "types");
-            connect(node, "queries");
-            connect(node, "mutations");
+            GraphQL client = node.getAttribute("client", GraphQL.class);
+            List<Query> queries = client.getQueries();
+
+            int count = queries.size();
+            Node qns = connect(node, "queries (" + count + ")");
+            qns.setAttribute("type", "queries");
+            qns.setAttribute("count", count);
+            qns.setAttribute("client", client);
+
+        } else if ("queries".equals(type)) {
+            Integer count = node.getAttribute("count", Integer.class);
+            log.info("open queries " + count);
+
+            GraphQL client = node.getAttribute("client", GraphQL.class);
+            List<Query> queries = client.getQueries();
+
+            for (Query q : queries) {
+                Node qn = connect(node, q.getName());
+                qn.setAttribute("description", q.getDescription());
+                qn.setAttribute("type", "query");
+                qn.setAttribute("client", client);
+            }
+
+        } else if ("query".equals(type)) {
+            GraphQL client = (GraphQL) node.getAttribute("client");
+            // TODO add query editor
         }
     }
 }
