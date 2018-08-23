@@ -1,11 +1,13 @@
 package org.aplatanao.billing.cockpit.control;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,28 +18,34 @@ public class Window extends BorderPane {
 
     @Autowired
     public Window(Log log, Actions actions, Graph graph, Details details) {
+
         setTop(actions);
+
+        //center
+        setAlignment(graph, Pos.TOP_LEFT);
+        setMargin(graph, new Insets(0,0,0,0));
         setCenter(graph);
-        setBottom(log);
+
         setRight(details);
+        setBottom(new TitledPane("LogEntry", log));
 
         setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {
-                log.trace("F5 pressed");
+
                 keyEvent.consume();
             }
         });
 
         setOnKeyReleased(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {
-                log.trace("F5 released");
+
                 keyEvent.consume();
             }
         });
 
         addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (KEYS_NEW_API.match(event)) {
-                log.trace("CTRL+N released");
+
                 event.consume();
             }
         });
