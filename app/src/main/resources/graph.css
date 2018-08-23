@@ -8,14 +8,16 @@ graph {
 }
 
 node {
-    shape: freeplane;
-    size: 10px;
+    shape: box;
     size-mode: fit;
-    fill-mode: none;
-    stroke-mode: plain;
-    stroke-color: grey;
-    stroke-width: 2px;
-    padding: 5px, 3px;
+    fill-mode: plain;
+    fill-color: darkseagreen;
+    padding: 5px;
+}
+
+node:selected {
+    fill-color: lightcoral;
+    stroke-color: coral;
 }
 
 edge {

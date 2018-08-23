@@ -18,17 +18,19 @@ public class AddAPI extends Dialog<ButtonType> {
 
     private TextField url = new TextField("http://localhost:8080");
 
+    private TextField description = new TextField("");
+
     public AddAPI() {
         setTitle("Add API Dialog");
         setHeaderText("Add an GraphQL location to explore it.");
 
-        GridPane content = new GridPane();
-        content.add(new Label("Name"), 0, 0);
-        content.add(name, 1, 0);
-        content.add(new Label("URL"), 0, 1);
-        content.add(url, 1, 1);
+        GridPane grid = new GridPane();
+        grid.add(new Label("Name"), 0, 0);
+        grid.add(name, 1, 0);
+        grid.add(new Label("URL"), 0, 1);
+        grid.add(url, 1, 1);
 
-        getDialogPane().setContent(content);
+        getDialogPane().setContent(grid);
         getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         getDialogPane().lookupButton(ButtonType.OK).addEventFilter(ActionEvent.ACTION, event -> {
             boolean valid = true;
@@ -64,7 +66,10 @@ public class AddAPI extends Dialog<ButtonType> {
             return Optional.empty();
         }
         try {
-            return Optional.of(new API(name.getText(), new URL(url.getText())));
+            return Optional.of(new API()
+                    .setName(name.getText())
+                    .setUrl(new URL(url.getText()))
+                    .setDescription(description.getText()));
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

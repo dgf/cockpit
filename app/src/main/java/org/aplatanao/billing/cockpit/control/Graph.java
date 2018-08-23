@@ -40,6 +40,18 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
 
     private FxDefaultView view;
 
+    private Node selected;
+
+    private Node select(Node node) {
+        log.trace("select " + node.getId());
+        if (selected != null) {
+            selected.removeAttribute("ui.selected");
+        }
+        selected = node;
+        selected.setAttribute("ui.selected");
+        return selected;
+    }
+
     private String getStyleSheet() throws IOException {
         InputStream stream = this.getClass().getResourceAsStream("/graph.css");
         try (BufferedReader buffer = new BufferedReader(new InputStreamReader(stream))) {
@@ -71,9 +83,9 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         setRightAnchor(view, 0.0);
 
         //addAPI(new API("graphloc", new URL("http://api.graphloc.com/")));
-        addAPI(new API("EtMDB", new URL("https://etmdb.com/graphql")));
-        addAPI(new API("gdom", new URL("http://gdom.graphene-python.org/graphql")));
-        addAPI(new API("melody", new URL("https://api.melody.sh/graphql")));
+        addAPI("EtMDB", "https://etmdb.com/graphql", "Ethiopian Movie Database");
+        addAPI("gdom", "http://gdom.graphene-python.org/graphql", "DOM Queries");
+        addAPI("melody", "https://api.melody.sh/graphql", "Golang packages");
     }
 
     @PreDestroy
@@ -82,6 +94,7 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
     }
 
     private Node connect(Node node, String child) {
+        log.trace("connect " + node.getId() + " " + child);
         String nid = node.getId() + "_" + child;
         String eid = node.getId() + ">" + nid;
         Node n = graph.addNode(nid);
@@ -90,13 +103,20 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         return n;
     }
 
+
     public void addAPI(API api) throws URISyntaxException, IOException {
-        log.trace("add node " + api);
+        log.trace("add " + api);
+
         Node node = graph.addNode(api.getName());
         node.setAttribute("api", api);
         node.setAttribute("type", "api");
-        node.setAttribute("label", api.getName());
+        node.setAttribute("ui.label", api.getName());
         node.setAttribute("client", new GraphQL(api.getUrl().toURI()));
+        api.nameProperty().addListener((observable, oldValue, newValue) -> node.setAttribute("ui.label", newValue));
+    }
+
+    private void addAPI(String name, String url, String description) throws URISyntaxException, IOException {
+        addAPI(new API().setName(name).setUrl(new URL(url)).setDescription(description));
     }
 
     @Override
@@ -116,21 +136,7 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         if ("api".equals(type)) {
             API api = node.getAttribute("api", API.class);
             log.info("add API details " + api);
-
-            try {
-                details.addEditor(api);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-
-            GraphQL client = node.getAttribute("client", GraphQL.class);
-            List<Query> queries = client.getQueries();
-
-            int count = queries.size();
-            Node qns = connect(node, "queries (" + count + ")");
-            qns.setAttribute("type", "queries");
-            qns.setAttribute("count", count);
-            qns.setAttribute("client", client);
+            details.open(api, () -> select(node));
 
         } else if ("queries".equals(type)) {
             Integer count = node.getAttribute("count", Integer.class);
@@ -151,4 +157,5 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
             // TODO add query editor
         }
     }
+
 }
