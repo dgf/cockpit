@@ -1,8 +1,5 @@
 package org.aplatanao.billing.cockpit.control;
 
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.TitledPane;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -18,34 +15,25 @@ public class Window extends BorderPane {
 
     @Autowired
     public Window(Log log, Actions actions, Graph graph, Details details) {
-
         setTop(actions);
-
-        //center
-        setAlignment(graph, Pos.TOP_LEFT);
-        setMargin(graph, new Insets(0,0,0,0));
         setCenter(graph);
-
         setRight(details);
-        setBottom(new TitledPane("LogEntry", log));
+        setBottom(log);
 
         setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {
-
                 keyEvent.consume();
             }
         });
 
         setOnKeyReleased(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.F5) {
-
                 keyEvent.consume();
             }
         });
 
         addEventHandler(KeyEvent.KEY_RELEASED, event -> {
             if (KEYS_NEW_API.match(event)) {
-
                 event.consume();
             }
         });

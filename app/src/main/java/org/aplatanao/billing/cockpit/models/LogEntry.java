@@ -1,37 +1,54 @@
 package org.aplatanao.billing.cockpit.models;
 
+import java.time.LocalDateTime;
+
 public class LogEntry {
-    private String date;
-    private String level;
+
+    private LocalDateTime date;
+
+    private LogLevel level;
+
     private String message;
 
-    public LogEntry(String date, String level, String message) {
+    public LogEntry(LocalDateTime date, LogLevel level, String message) {
         this.date = date;
         this.level = level;
         this.message = message;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public LogEntry setDate(LocalDateTime date) {
         this.date = date;
+        return this;
     }
 
-    public String getLevel() {
+    public LogLevel getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public LogEntry setLevel(LogLevel level) {
         this.level = level;
+        return this;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public LogEntry setMessage(String message) {
         this.message = message;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "LogEntry{" +
+                "date=" + date +
+                ", level=" + level +
+                ", message='" + message + '\'' +
+                '}';
     }
 }
