@@ -21,8 +21,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -103,20 +103,19 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         return n;
     }
 
-
-    public void addAPI(API api) throws URISyntaxException, IOException {
+    public void addAPI(API api) throws IOException {
         log.trace("add " + api);
 
         Node node = graph.addNode(api.getName());
         node.setAttribute("api", api);
         node.setAttribute("type", "api");
         node.setAttribute("ui.label", api.getName());
-        node.setAttribute("client", new GraphQL(api.getUrl().toURI()));
+        node.setAttribute("client", new GraphQL(api.getUri()));
         api.nameProperty().addListener((observable, oldValue, newValue) -> node.setAttribute("ui.label", newValue));
     }
 
-    private void addAPI(String name, String url, String description) throws URISyntaxException, IOException {
-        addAPI(new API().setName(name).setUrl(new URL(url)).setDescription(description));
+    private void addAPI(String name, String uri, String description) throws URISyntaxException, IOException {
+        addAPI(new API().setName(name).setUri(new URI(uri)).setDescription(description));
     }
 
     @Override

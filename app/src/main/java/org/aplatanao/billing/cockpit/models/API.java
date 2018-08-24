@@ -13,7 +13,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import javax.validation.constraints.NotBlank;
-import java.net.URL;
+import java.net.URI;
 
 public class API implements Detail {
 
@@ -33,20 +33,20 @@ public class API implements Detail {
         return this;
     }
 
-    @FormAdapter(URLAdapter.class)
+    @FormAdapter(URIAdapter.class)
     @FormFactory(TextFieldFactory.class)
-    private ObjectProperty<URL> url = new SimpleObjectProperty<>();
+    private ObjectProperty<URI> uri = new SimpleObjectProperty<>();
 
-    public ObjectProperty<URL> urlProperty() {
-        return url;
+    public ObjectProperty<URI> uriProperty() {
+        return uri;
     }
 
-    public URL getUrl() {
-        return url.get();
+    public URI getUri() {
+        return uri.get();
     }
 
-    public API setUrl(URL url) {
-        urlProperty().set(url);
+    public API setUri(URI uri) {
+        uriProperty().set(uri);
         return this;
     }
 
@@ -78,7 +78,7 @@ public class API implements Detail {
     public String toString() {
         return "API{" +
                 "name=" + name.get() +
-                ", url=" + url.get() +
+                ", uri=" + uri.get() +
                 ", description=" + description.get() +
                 '}';
     }

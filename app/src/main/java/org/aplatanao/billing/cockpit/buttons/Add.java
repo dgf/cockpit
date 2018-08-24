@@ -22,7 +22,7 @@ public class Add extends Button {
                 log.info("add " + api);
                 try {
                     graph.addAPI(api);
-                } catch (URISyntaxException | IOException e) {
+                } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             });
