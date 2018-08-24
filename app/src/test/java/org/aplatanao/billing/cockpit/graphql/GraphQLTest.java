@@ -1,53 +1,47 @@
 package org.aplatanao.billing.cockpit.graphql;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.aplatanao.billing.cockpit.clients.GraphQL;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.MockServerRule;
 import org.mockserver.model.HttpRequest;
 import org.mockserver.model.HttpResponse;
+import org.mockserver.socket.PortFactory;
 import org.mockserver.verify.VerificationTimes;
+import org.springframework.core.io.ClassPathResource;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.stream.Collectors;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 
 public class GraphQLTest {
 
     private static final String PATH = "/graphql";
 
-    private ObjectMapper mapper = new ObjectMapper();
-
-    @Rule
-    public MockServerRule rule = new MockServerRule(this);
-
-    private MockServerClient mock;
+    private MockServerClient server;
 
     private GraphQL client;
 
-    private String mockSchema() throws IOException {
-        InputStream stream = this.getClass().getResourceAsStream("/schema.json");
-        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(stream))) {
-            return buffer.lines().collect(Collectors.joining("\n"));
-        }
+    private String mockedSchema() throws IOException {
+        URI uri = new ClassPathResource("/schema.json").getURI();
+        return new String(Files.readAllBytes(Paths.get(uri)), StandardCharsets.UTF_8);
     }
 
     @Before
     public void initClientMock() throws IOException, URISyntaxException {
-        mock.when(HttpRequest.request()
+        server = startClientAndServer(PortFactory.findFreePort());
+        server.when(HttpRequest.request()
                 .withMethod("POST")
                 .withHeader(HttpHeaders.ACCEPT, ContentType.APPLICATION_JSON.toString())
                 .withHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString())
@@ -55,20 +49,21 @@ public class GraphQLTest {
         ).respond(HttpResponse.response()
                 .withStatusCode(200)
                 .withHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString())
-                .withBody(mockSchema()));
+                .withBody(mockedSchema()));
         client = new GraphQL(new URIBuilder().setScheme("http")
-                .setHost(mock.remoteAddress().getHostString())
-                .setPort(mock.remoteAddress().getPort())
+                .setHost(server.remoteAddress().getHostString())
+                .setPort(server.remoteAddress().getPort())
                 .setPath(PATH).build());
     }
 
     @After
     public void verifyClientInit() {
-        mock.verify(HttpRequest.request().withPath(PATH), VerificationTimes.once());
+        server.verify(HttpRequest.request().withPath(PATH), VerificationTimes.once());
+        server.stop();
     }
 
     @Test
-    public void initializedClient() throws IOException, URISyntaxException {
+    public void initializedClient() {
         assertThat(client.getTypes(), hasItem(hasProperty("name", equalTo("Invoice"))));
         assertThat(client.getQueries(), hasItem(hasProperty("name", equalTo("invoices"))));
     }
