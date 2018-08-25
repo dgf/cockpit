@@ -1,6 +1,7 @@
 package org.aplatanao.billing.cockpit.graphql;
 
 import org.apache.http.HttpHeaders;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.aplatanao.billing.cockpit.clients.GraphQL;
@@ -20,18 +21,17 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 
-public class GraphQLTest {
+public class GraphQLInitializationTest {
 
     private static final String PATH = "/graphql";
 
     private MockServerClient server;
-
-    private GraphQL client;
 
     private String mockedSchema() throws IOException {
         URI uri = new ClassPathResource("/schema.json").getURI();
@@ -39,7 +39,7 @@ public class GraphQLTest {
     }
 
     @Before
-    public void initClientMock() throws IOException, URISyntaxException {
+    public void initServer() throws IOException, URISyntaxException {
         server = startClientAndServer(PortFactory.findFreePort());
         server.when(HttpRequest.request()
                 .withMethod("POST")
@@ -50,20 +50,23 @@ public class GraphQLTest {
                 .withStatusCode(200)
                 .withHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_JSON.toString())
                 .withBody(mockedSchema()));
-        client = new GraphQL(new URIBuilder().setScheme("http")
-                .setHost(server.remoteAddress().getHostString())
-                .setPort(server.remoteAddress().getPort())
-                .setPath(PATH).build());
     }
 
     @After
-    public void verifyClientInit() {
+    public void verifyServer() {
         server.verify(HttpRequest.request().withPath(PATH), VerificationTimes.once());
         server.stop();
     }
 
     @Test
-    public void initializedClient() {
+    public void initClient() throws URISyntaxException, IOException {
+        GraphQL client = new GraphQL();
+        client.init(new URIBuilder().setScheme("http")
+                .setHost(server.remoteAddress().getHostString())
+                .setPort(server.remoteAddress().getPort())
+                .setPath(PATH).build());
+        assertThat(client.getStatus().getCode(), is(HttpStatus.SC_OK));
+        assertThat(client.getStatus().getStamp(), lessThan(LocalDateTime.now()));
         assertThat(client.getTypes(), hasItem(hasProperty("name", equalTo("Invoice"))));
         assertThat(client.getQueries(), hasItem(hasProperty("name", equalTo("invoices"))));
     }

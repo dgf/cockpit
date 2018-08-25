@@ -3,6 +3,7 @@ package org.aplatanao.billing.cockpit.models;
 import com.dooapp.fxform.adapter.FormAdapter;
 import com.dooapp.fxform.annotation.FormFactory;
 import com.dooapp.fxform.annotation.NonVisual;
+import com.dooapp.fxform.reflection.MultipleBeanSource;
 import com.dooapp.fxform.validation.Warning;
 import com.dooapp.fxform.view.factory.impl.TextFieldFactory;
 import javafx.beans.binding.Bindings;
@@ -11,6 +12,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.aplatanao.billing.cockpit.clients.GraphQL;
 
 import javax.validation.constraints.NotBlank;
 import java.net.URI;
@@ -66,6 +68,20 @@ public class API implements Detail {
         return this;
     }
 
+    private ObjectProperty<GraphQL> client = new SimpleObjectProperty<>(new GraphQL());
+
+    public GraphQL getClient() {
+        return client.get();
+    }
+
+    public ObjectProperty<GraphQL> clientProperty() {
+        return client;
+    }
+
+    public void setClient(GraphQL client) {
+        this.client.set(client);
+    }
+
     @NonVisual
     private StringExpression title = Bindings.concat("API ", nameProperty());
 
@@ -75,6 +91,12 @@ public class API implements Detail {
     }
 
     @Override
+    public Object getSource() {
+        return new MultipleBeanSource(this,
+                getClient(),
+                getClient().getStatus());
+    }
+
     public String toString() {
         return "API{" +
                 "name=" + name.get() +

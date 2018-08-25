@@ -110,12 +110,14 @@ public class Graph extends AnchorPane implements EventHandler<MouseEvent> {
         node.setAttribute("api", api);
         node.setAttribute("type", "api");
         node.setAttribute("ui.label", api.getName());
-        node.setAttribute("client", new GraphQL(api.getUri()));
         api.nameProperty().addListener((observable, oldValue, newValue) -> node.setAttribute("ui.label", newValue));
     }
 
     private void addAPI(String name, String uri, String description) throws URISyntaxException, IOException {
-        addAPI(new API().setName(name).setUri(new URI(uri)).setDescription(description));
+        addAPI(new API()
+                .setName(name)
+                .setUri(new URI(uri))
+                .setDescription(description));
     }
 
     @Override

@@ -31,9 +31,10 @@ public class Details extends Accordion {
 
         TitledPane pane = details.get(titleProperty);
         if (pane == null) {
+            FXForm form = new FXForm<>(detail.getSource());
             pane = new TitledPane();
             pane.textProperty().bind(titleProperty);
-            pane.setContent(new FXForm<>(detail));
+            pane.setContent(form);
             pane.expandedProperty().addListener((observable, wasExpanded, isNowExpanded) -> {
                 if (isNowExpanded) {
                     activate.get();
