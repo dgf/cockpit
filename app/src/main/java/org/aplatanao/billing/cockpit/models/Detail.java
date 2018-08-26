@@ -1,6 +1,7 @@
 package org.aplatanao.billing.cockpit.models;
 
 import javafx.beans.binding.StringExpression;
+import javafx.scene.Node;
 
 public interface Detail {
 
@@ -8,4 +9,5 @@ public interface Detail {
 
     Object getSource();
 
+    Node getActions();
 }

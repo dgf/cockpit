@@ -4,6 +4,7 @@ import com.dooapp.fxform.FXForm;
 import javafx.beans.binding.StringExpression;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.VBox;
 import org.aplatanao.billing.cockpit.models.Detail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,9 +33,13 @@ public class Details extends Accordion {
         TitledPane pane = details.get(titleProperty);
         if (pane == null) {
             FXForm form = new FXForm<>(detail.getSource());
+
+            VBox vBox = new VBox();
+            vBox.getChildren().addAll(form, detail.getActions());
+
             pane = new TitledPane();
             pane.textProperty().bind(titleProperty);
-            pane.setContent(form);
+            pane.setContent(vBox);
             pane.expandedProperty().addListener((observable, wasExpanded, isNowExpanded) -> {
                 if (isNowExpanded) {
                     activate.get();

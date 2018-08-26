@@ -12,9 +12,13 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import org.aplatanao.billing.cockpit.clients.GraphQL;
 
 import javax.validation.constraints.NotBlank;
+import java.io.IOException;
 import java.net.URI;
 
 public class API implements Detail {
@@ -95,6 +99,26 @@ public class API implements Detail {
         return new MultipleBeanSource(this,
                 getClient(),
                 getClient().getStatus());
+    }
+
+    @Override
+    public Node getActions() {
+        HBox hBox = new HBox();
+        Button button = new Button("init");
+
+        button.setOnAction(event -> {
+            button.setDisable(true);
+            try {
+                client.get().init(uri.get());
+            } catch (IOException e) {
+                // TODO handle error and reinitialization
+                e.printStackTrace();
+                button.setDisable(false);
+            }
+        });
+
+        hBox.getChildren().add(button);
+        return hBox;
     }
 
     public String toString() {
