@@ -10,7 +10,7 @@ public class CockpitCrumbs extends BoxPane {
     private List<Crumb> path = new ArrayList<>();
 
     public CockpitCrumbs() {
-        setStyleName("breadcrumb");
+        setStyleName("crumbs");
     }
 
     public void show(List<TreeNode> nodes) {

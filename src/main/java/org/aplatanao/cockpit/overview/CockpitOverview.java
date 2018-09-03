@@ -18,7 +18,7 @@ public class CockpitOverview extends BoxPane {
 
     public CockpitOverview(OverviewFactory factory) {
         this.factory = factory;
-        setStyleName("details");
+        setStyleName("overview");
         setOrientation(Orientation.VERTICAL);
     }
 

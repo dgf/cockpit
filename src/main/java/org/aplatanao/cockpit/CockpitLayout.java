@@ -1,21 +1,26 @@
 package org.aplatanao.cockpit;
 
-import org.apache.pivot.wtk.*;
+import org.apache.pivot.wtk.Border;
+import org.apache.pivot.wtk.Orientation;
+import org.apache.pivot.wtk.SplitPane;
+import org.apache.pivot.wtk.TablePane;
+import org.aplatanao.cockpit.controls.CockpitControls;
+import org.aplatanao.cockpit.details.CockpitDetails;
 import org.aplatanao.cockpit.main.CockpitMain;
 import org.aplatanao.cockpit.menu.CockpitMenu;
-import org.aplatanao.cockpit.navigation.CockpitNavigation;
 import org.aplatanao.cockpit.status.CockpitStatus;
-import org.aplatanao.cockpit.view.CockpitView;
 
 public class CockpitLayout extends TablePane {
 
     public CockpitLayout(
             CockpitMenu menu,
-            CockpitNavigation navigation,
+            CockpitControls controls,
             CockpitMain main,
-            CockpitView view,
+            CockpitDetails details,
             CockpitStatus status
     ) {
+        setStyleName("layout");
+
         Column column = new Column();
         column.setWidth("1*");
         getColumns().add(column);
@@ -28,12 +33,12 @@ public class CockpitLayout extends TablePane {
         Row controlsRow = new Row();
         controlsRow.setHeight(-1);
         getRows().add(controlsRow);
-        controlsRow.add(navigation);
+        controlsRow.add(controls);
 
         SplitPane split = new SplitPane(Orientation.VERTICAL);
         split.setSplitRatio(0.73f);
         split.setTop(main);
-        split.setBottom(new Border(view));
+        split.setBottom(new Border(details));
 
         Row mainRow = new Row();
         mainRow.setHeight("1*");

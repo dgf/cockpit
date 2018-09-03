@@ -2,24 +2,26 @@
   "window": {
     "backgroundColor": "white"
   },
+  "layout": {
+  },
   "menu": {
   },
-  "navigation": {
+  "controls": {
   },
-  "breadcrumb": {
+  "crumbs": {
   },
   "actions": {
     "horizontalAlignment": "right"
   },
   "main": {
   },
-  "tree": {
+  "navigation": {
   },
   "content": {
   },
-  "details": {
+  "overview": {
   },
-  "view": {
+  "details": {
   },
   "status": {
   },

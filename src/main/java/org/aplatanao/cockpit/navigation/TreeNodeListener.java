@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.tree;
+package org.aplatanao.cockpit.navigation;
 
 import org.apache.pivot.collections.ArrayList;
 import org.apache.pivot.collections.List;
@@ -66,9 +66,8 @@ public class TreeNodeListener implements TreeViewSelectionListener, ComponentKey
 
     @Override
     public boolean keyReleased(Component component, int keyCode, Keyboard.KeyLocation keyLocation) {
-        System.out.println("key released: " + keyCode);
         if (keyCode == Keyboard.KeyCode.ENTER) {
-            if (component instanceof CockpitTree) {
+            if (component instanceof CockpitNavigation) {
                 TreeView tree = (TreeView) component;
                 Sequence.Tree.Path path = tree.getSelectedPath();
                 Object selected = tree.getSelectedNode();
