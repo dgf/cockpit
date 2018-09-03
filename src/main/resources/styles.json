@@ -1,0 +1,32 @@
+{
+  "window": {
+    "backgroundColor": "white"
+  },
+  "menu": {
+  },
+  "navigation": {
+  },
+  "breadcrumb": {
+  },
+  "actions": {
+    "horizontalAlignment": "right"
+  },
+  "main": {
+  },
+  "tree": {
+  },
+  "content": {
+  },
+  "details": {
+  },
+  "view": {
+  },
+  "status": {
+  },
+  "inactive": {
+    "color": "red"
+  },
+  "active": {
+    "color": "black"
+  }
+}
