@@ -7,6 +7,7 @@ import org.aplatanao.context.example.Storage;
 import org.aplatanao.context.invalid.MultipleConstructor;
 import org.aplatanao.context.invalid.RecursiveRoot;
 import org.aplatanao.context.invalid.SelfReference;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,18 +34,18 @@ public class ContextTest {
 
         // test service layer
         ServiceA serviceA = context.get(ServiceA.class);
-        assertEquals(application.getServiceA(), serviceA);
+        assertSame(application.getServiceA(), serviceA);
         assertEquals(application.get("foo"), serviceA.get("foo").getValue());
 
         // test dependency on service level
         ServiceB serviceB = context.get(ServiceB.class);
-        assertEquals(application.getServiceB(), serviceB);
-        assertEquals(serviceB.getServiceA(), serviceA);
+        assertSame(application.getServiceB(), serviceB);
+        assertSame(serviceB.getServiceA(), serviceA);
 
         // test storage layer access
         Storage storage = context.get(Storage.class);
-        assertEquals(context, storage.getContext());
-        assertEquals(serviceA.getStorage(), storage);
+        assertSame(context, storage.getContext());
+        assertSame(serviceA.getStorage(), storage);
         assertEquals(serviceA.get("foo"), storage.get("foo"));
 
         // and reverse it

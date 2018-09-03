@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.graphql;
+package org.aplatanao.graphql;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

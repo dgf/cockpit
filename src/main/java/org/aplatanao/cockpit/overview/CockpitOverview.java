@@ -6,9 +6,9 @@ import org.apache.pivot.wtk.BoxPane;
 import org.apache.pivot.wtk.Form;
 import org.apache.pivot.wtk.Orientation;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.graphql.Client;
-import org.aplatanao.cockpit.graphql.Query;
-import org.aplatanao.cockpit.graphql.Type;
+import org.aplatanao.graphql.Client;
+import org.aplatanao.graphql.Query;
+import org.aplatanao.graphql.Type;
 
 public class CockpitOverview extends BoxPane {
 

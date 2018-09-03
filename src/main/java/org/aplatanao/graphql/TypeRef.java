@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.graphql;
+package org.aplatanao.graphql;
 
 public class TypeRef {
 

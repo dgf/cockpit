@@ -5,10 +5,10 @@ import org.apache.pivot.collections.List;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.graphql.API;
-import org.aplatanao.cockpit.graphql.Client;
-import org.aplatanao.cockpit.graphql.Query;
-import org.aplatanao.cockpit.graphql.Type;
+import org.aplatanao.graphql.API;
+import org.aplatanao.graphql.Client;
+import org.aplatanao.graphql.Query;
+import org.aplatanao.graphql.Type;
 
 import java.net.URISyntaxException;
 import java.util.Comparator;

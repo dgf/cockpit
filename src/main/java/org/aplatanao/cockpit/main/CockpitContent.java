@@ -3,7 +3,7 @@ package org.aplatanao.cockpit.main;
 import org.apache.pivot.wtk.Form;
 import org.apache.pivot.wtk.TabPane;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.graphql.Query;
+import org.aplatanao.graphql.Query;
 
 public class CockpitContent extends TabPane {
 

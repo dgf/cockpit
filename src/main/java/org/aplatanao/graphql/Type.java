@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.graphql;
+package org.aplatanao.graphql;
 
 import java.util.ArrayList;
 import java.util.List;

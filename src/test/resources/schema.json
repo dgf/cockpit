@@ -1,0 +1,76 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Query",
+          "description": ""
+        },
+        {
+          "name": "Int",
+          "description": "Built-in Int"
+        },
+        {
+          "name": "String",
+          "description": "Built-in String"
+        },
+        {
+          "name": "Invoice",
+          "description": ""
+        },
+        {
+          "name": "InvoicePosition",
+          "description": ""
+        },
+        {
+          "name": "__Schema",
+          "description": "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations."
+        },
+        {
+          "name": "__Type",
+          "description": null
+        },
+        {
+          "name": "__TypeKind",
+          "description": "An enum describing what kind of type a given __Type is"
+        },
+        {
+          "name": "__Field",
+          "description": null
+        },
+        {
+          "name": "__InputValue",
+          "description": null
+        },
+        {
+          "name": "Boolean",
+          "description": "Built-in Boolean"
+        },
+        {
+          "name": "__EnumValue",
+          "description": null
+        },
+        {
+          "name": "__Directive",
+          "description": null
+        },
+        {
+          "name": "__DirectiveLocation",
+          "description": "An enum describing valid locations where a directive can be placed"
+        }
+      ],
+      "queryType": {
+        "fields": [
+          {
+            "name": "invoices",
+            "description": ""
+          },
+          {
+            "name": "invoice",
+            "description": ""
+          }
+        ]
+      }
+    }
+  }
+}

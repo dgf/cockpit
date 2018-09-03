@@ -7,7 +7,6 @@ import org.apache.pivot.wtk.*;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.cockpit.crumb.CockpitCrumbs;
-import org.aplatanao.cockpit.graphql.Query;
 import org.aplatanao.cockpit.main.CockpitContent;
 import org.aplatanao.cockpit.overview.CockpitOverview;
 

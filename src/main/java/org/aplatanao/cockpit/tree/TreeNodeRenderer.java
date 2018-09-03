@@ -5,7 +5,7 @@ import org.apache.pivot.wtk.Label;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.graphql.Client;
+import org.aplatanao.graphql.Client;
 
 public class TreeNodeRenderer extends Label implements TreeView.NodeRenderer {
 
