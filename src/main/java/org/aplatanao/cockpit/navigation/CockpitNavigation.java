@@ -20,7 +20,7 @@ public class CockpitNavigation extends TreeView {
 
     private List<Object> treeData = new ArrayList<>();
 
-    public CockpitNavigation(TreeNodeRenderer renderer, TreeNodeListener listener) {
+    public CockpitNavigation(NavigationRenderer renderer, NavigationListener listener) {
         setStyleName("navigation");
         setNodeRenderer(renderer);
         getTreeViewSelectionListeners().add(listener);

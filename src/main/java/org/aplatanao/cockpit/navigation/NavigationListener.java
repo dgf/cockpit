@@ -10,7 +10,7 @@ import org.aplatanao.cockpit.content.CockpitContent;
 import org.aplatanao.cockpit.crumb.CockpitCrumbs;
 import org.aplatanao.cockpit.overview.CockpitOverview;
 
-public class TreeNodeListener implements TreeViewSelectionListener, ComponentKeyListener, ComponentMouseButtonListener {
+public class NavigationListener implements TreeViewSelectionListener, ComponentKeyListener, ComponentMouseButtonListener {
 
     private CockpitCrumbs crumbs;
 
@@ -18,7 +18,7 @@ public class TreeNodeListener implements TreeViewSelectionListener, ComponentKey
 
     private CockpitContent content;
 
-    public TreeNodeListener(CockpitCrumbs crumbs, CockpitOverview overview, CockpitContent content) {
+    public NavigationListener(CockpitCrumbs crumbs, CockpitOverview overview, CockpitContent content) {
         this.crumbs = crumbs;
         this.overview = overview;
         this.content = content;
