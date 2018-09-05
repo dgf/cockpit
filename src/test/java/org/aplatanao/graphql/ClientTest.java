@@ -21,7 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 
@@ -65,7 +65,8 @@ public class ClientTest {
         Client client = new Client(new API("test_mock", uri.toString(), "local mocked API for testing"));
         client.init();
         assertTrue(client.isInitialized());
-        assertThat(client.getTypes(), hasItem(hasProperty("name", equalTo("Invoice"))));
-        assertThat(client.getQueries(), hasItem(hasProperty("name", equalTo("invoices"))));
+        assertThat(client.getStatus(), notNullValue());
+        assertThat(client.getType("String"), notNullValue());
+        assertThat(client.getQuery("job"), notNullValue());
     }
 }

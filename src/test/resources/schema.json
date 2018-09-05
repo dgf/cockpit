@@ -1,76 +1,3851 @@
 {
   "data": {
     "__schema": {
-      "types": [
-        {
-          "name": "Query",
-          "description": ""
-        },
-        {
-          "name": "Int",
-          "description": "Built-in Int"
-        },
-        {
-          "name": "String",
-          "description": "Built-in String"
-        },
-        {
-          "name": "Invoice",
-          "description": ""
-        },
-        {
-          "name": "InvoicePosition",
-          "description": ""
-        },
-        {
-          "name": "__Schema",
-          "description": "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations."
-        },
-        {
-          "name": "__Type",
-          "description": null
-        },
-        {
-          "name": "__TypeKind",
-          "description": "An enum describing what kind of type a given __Type is"
-        },
-        {
-          "name": "__Field",
-          "description": null
-        },
-        {
-          "name": "__InputValue",
-          "description": null
-        },
-        {
-          "name": "Boolean",
-          "description": "Built-in Boolean"
-        },
-        {
-          "name": "__EnumValue",
-          "description": null
-        },
-        {
-          "name": "__Directive",
-          "description": null
-        },
-        {
-          "name": "__DirectiveLocation",
-          "description": "An enum describing valid locations where a directive can be placed"
-        }
-      ],
       "queryType": {
         "fields": [
           {
-            "name": "invoices",
-            "description": ""
+            "name": "cinemaDetail",
+            "description": "The ID of the object",
+            "type": {
+              "name": "CinemaDetailNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
           },
           {
-            "name": "invoice",
-            "description": ""
+            "name": "allCinemaDetails",
+            "description": null,
+            "type": {
+              "name": "CinemaDetailNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "filmographyType",
+            "description": "The ID of the object",
+            "type": {
+              "name": "FilmographyTypeNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allFilmographyTypes",
+            "description": null,
+            "type": {
+              "name": "FilmographyTypeNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "genreType",
+            "description": "The ID of the object",
+            "type": {
+              "name": "GenreTypeNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allGenreTypes",
+            "description": null,
+            "type": {
+              "name": "GenreTypeNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "job",
+            "description": "The ID of the object",
+            "type": {
+              "name": "JobBoardNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allJobs",
+            "description": null,
+            "type": {
+              "name": "JobBoardNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "genderMf",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "company",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "ID"
+                }
+              },
+              {
+                "name": "company_Icontains",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "ID"
+                }
+              },
+              {
+                "name": "company_Istartswith",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "ID"
+                }
+              },
+              {
+                "name": "jobTitle",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "jobTitle_Icontains",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "jobTitle_Istartswith",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              }
+            ]
+          },
+          {
+            "name": "company",
+            "description": "The ID of the object",
+            "type": {
+              "name": "CompanyNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allCompanies",
+            "description": null,
+            "type": {
+              "name": "CompanyNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "companyName",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "establishedIn",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              }
+            ]
+          },
+          {
+            "name": "jobsTag",
+            "description": "The ID of the object",
+            "type": {
+              "name": "JobTagNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allJobTags",
+            "description": null,
+            "type": {
+              "name": "JobTagNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "newsTag",
+            "description": "The ID of the object",
+            "type": {
+              "name": "NewsTagNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allNewsTags",
+            "description": null,
+            "type": {
+              "name": "NewsTagNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "news",
+            "description": "The ID of the object",
+            "type": {
+              "name": "NewsNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allNews",
+            "description": null,
+            "type": {
+              "name": "NewsNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "role",
+            "description": "The ID of the object",
+            "type": {
+              "name": "RoleNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allRoles",
+            "description": null,
+            "type": {
+              "name": "RoleNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "contentTag",
+            "description": "The ID of the object",
+            "type": {
+              "name": "ContentTagNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allContentTags",
+            "description": null,
+            "type": {
+              "name": "ContentTagNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "cinemaSchedule",
+            "description": "The ID of the object",
+            "type": {
+              "name": "CinemaScheduleNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allCinemaSchedules",
+            "description": null,
+            "type": {
+              "name": "CinemaScheduleNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "showtime",
+            "description": "The ID of the object",
+            "type": {
+              "name": "ShowtimeNode"
+            },
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": null
+                }
+              }
+            ]
+          },
+          {
+            "name": "allShowtimes",
+            "description": null,
+            "type": {
+              "name": "ShowtimeNodeConnection"
+            },
+            "args": [
+              {
+                "name": "before",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "after",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "String"
+                }
+              },
+              {
+                "name": "first",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              },
+              {
+                "name": "last",
+                "description": null,
+                "defaultValue": null,
+                "type": {
+                  "name": "Int"
+                }
+              }
+            ]
+          },
+          {
+            "name": "hello",
+            "description": null,
+            "type": {
+              "name": "String"
+            },
+            "args": []
           }
         ]
-      }
+      },
+      "types": [
+        {
+          "name": "Query",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "cinemaDetail",
+              "description": "The ID of the object",
+              "type": {
+                "name": "CinemaDetailNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allCinemaDetails",
+              "description": null,
+              "type": {
+                "name": "CinemaDetailNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "filmographyType",
+              "description": "The ID of the object",
+              "type": {
+                "name": "FilmographyTypeNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allFilmographyTypes",
+              "description": null,
+              "type": {
+                "name": "FilmographyTypeNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "genreType",
+              "description": "The ID of the object",
+              "type": {
+                "name": "GenreTypeNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allGenreTypes",
+              "description": null,
+              "type": {
+                "name": "GenreTypeNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "job",
+              "description": "The ID of the object",
+              "type": {
+                "name": "JobBoardNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allJobs",
+              "description": null,
+              "type": {
+                "name": "JobBoardNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "genderMf",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "company",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "company_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "company_Istartswith",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "jobTitle",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Istartswith",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "company",
+              "description": "The ID of the object",
+              "type": {
+                "name": "CompanyNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allCompanies",
+              "description": null,
+              "type": {
+                "name": "CompanyNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "companyName",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "establishedIn",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "jobsTag",
+              "description": "The ID of the object",
+              "type": {
+                "name": "JobTagNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allJobTags",
+              "description": null,
+              "type": {
+                "name": "JobTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "newsTag",
+              "description": "The ID of the object",
+              "type": {
+                "name": "NewsTagNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allNewsTags",
+              "description": null,
+              "type": {
+                "name": "NewsTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "news",
+              "description": "The ID of the object",
+              "type": {
+                "name": "NewsNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allNews",
+              "description": null,
+              "type": {
+                "name": "NewsNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "role",
+              "description": "The ID of the object",
+              "type": {
+                "name": "RoleNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allRoles",
+              "description": null,
+              "type": {
+                "name": "RoleNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "contentTag",
+              "description": "The ID of the object",
+              "type": {
+                "name": "ContentTagNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allContentTags",
+              "description": null,
+              "type": {
+                "name": "ContentTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "cinemaSchedule",
+              "description": "The ID of the object",
+              "type": {
+                "name": "CinemaScheduleNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allCinemaSchedules",
+              "description": null,
+              "type": {
+                "name": "CinemaScheduleNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "showtime",
+              "description": "The ID of the object",
+              "type": {
+                "name": "ShowtimeNode"
+              },
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "allShowtimes",
+              "description": null,
+              "type": {
+                "name": "ShowtimeNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "hello",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "CinemaDetailNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "hallName",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "numberOfSeats",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "technology",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "cinemascheduleSet",
+              "description": null,
+              "type": {
+                "name": "CinemaScheduleNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Node",
+          "kind": "INTERFACE",
+          "description": "An object with an ID",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ID",
+          "kind": "SCALAR",
+          "description": "The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `\"4\"`) or integer (such as `4`) input value will be accepted as an ID.",
+          "fields": null
+        },
+        {
+          "name": "DateTime",
+          "kind": "SCALAR",
+          "description": "The `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
+          "fields": null
+        },
+        {
+          "name": "String",
+          "kind": "SCALAR",
+          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+          "fields": null
+        },
+        {
+          "name": "Int",
+          "kind": "SCALAR",
+          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^53 - 1) and 2^53 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
+          "fields": null
+        },
+        {
+          "name": "CinemaScheduleNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "PageInfo",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "hasNextPage",
+              "description": "When paginating forwards, are there more items?",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "hasPreviousPage",
+              "description": "When paginating backwards, are there more items?",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "startCursor",
+              "description": "When paginating backwards, the cursor to continue.",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "endCursor",
+              "description": "When paginating forwards, the cursor to continue.",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "fields": null
+        },
+        {
+          "name": "CinemaScheduleNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "CinemaScheduleNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "CinemaScheduleNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a Cinema Schedule.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "showStartDate",
+              "description": "",
+              "type": {
+                "name": "DateTime"
+              },
+              "args": []
+            },
+            {
+              "name": "showEndDate",
+              "description": "",
+              "type": {
+                "name": "DateTime"
+              },
+              "args": []
+            },
+            {
+              "name": "movie",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "cinemaDetail",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "MovieMetaDataNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a movie on EtMDB.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "movieTitle",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "releaseDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "durationMinutes",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "ageRestriction",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "budget",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "gross",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "originalLanguage",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "flagSeries",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "flagIncinema",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "plot",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slogan",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "posterImage",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "cinemascheduleSet",
+              "description": null,
+              "type": {
+                "name": "CinemaScheduleNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MovieMetaDataAgeRestriction",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "CinemaDetailNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "CinemaDetailNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "CinemaDetailNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "FilmographyTypeNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents the types of filmographies.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "filmographyDescription",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "summary",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "FilmographyTypeNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "FilmographyTypeNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "FilmographyTypeNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "GenreTypeNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents the types of movie genres.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "genreDescription",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "summary",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "GenreTypeNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "GenreTypeNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "GenreTypeNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "JobBoardNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents the details for jobs listed on EtMDB.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "jobTitle",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "location",
+              "description": "",
+              "type": {
+                "name": "JobBoardLocation"
+              },
+              "args": []
+            },
+            {
+              "name": "productionType",
+              "description": "",
+              "type": {
+                "name": "JobBoardProductionType"
+              },
+              "args": []
+            },
+            {
+              "name": "duration",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "productionDate",
+              "description": "",
+              "type": {
+                "name": "DateTime"
+              },
+              "args": []
+            },
+            {
+              "name": "closingDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "salary",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "genderMf",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "ageLevel",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "company",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "jobtagSet",
+              "description": null,
+              "type": {
+                "name": "JobTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "JobBoardLocation",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "JobBoardProductionType",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "JobBoardGenderMf",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "JobBoardAgeLevel",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "CompanyNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "companyName",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "establishedIn",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "opensAt",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "closesAt",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "companyPosterImage",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "jobboardSet",
+              "description": null,
+              "type": {
+                "name": "JobBoardNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "genderMf",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "company",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "company_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "company_Istartswith",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "jobTitle",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Istartswith",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Time",
+          "kind": "SCALAR",
+          "description": "The `Time` scalar type represents a Time value as\nspecified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
+          "fields": null
+        },
+        {
+          "name": "JobBoardNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "JobBoardNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "JobBoardNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "JobTagNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "JobTagNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "JobTagNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "JobTagNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a Job tag.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "jobBoard",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "contentTag",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ContentTagNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a Content tag.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "keyword",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "summary",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "newstagSet",
+              "description": null,
+              "type": {
+                "name": "NewsTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "jobtagSet",
+              "description": null,
+              "type": {
+                "name": "JobTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NewsTagNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "NewsTagNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "NewsTagNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "NewsTagNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a News and Articles tags.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "news",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "contentTag",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "NewsNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a News and Articles.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "title",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "content",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "newsImage",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "newstagSet",
+              "description": null,
+              "type": {
+                "name": "NewsTagNodeConnection"
+              },
+              "args": [
+                {
+                  "name": "before",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "after",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "Int"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CompanyNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "CompanyNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "CompanyNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "NewsNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "NewsNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "NewsNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "RoleNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a Movie Roles for cast.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "roleDescription",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "summary",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "RoleNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "RoleNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "RoleNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ContentTagNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ContentTagNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "ContentTagNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ShowtimeNode",
+          "kind": "OBJECT",
+          "description": "\n    Represents a Cinema Show times.\n    ",
+          "fields": [
+            {
+              "name": "id",
+              "description": "The ID of the object.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "createdDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "updatedDate",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "showtime",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "dayOfWeek",
+              "description": "",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ShowtimeDayOfWeek",
+          "kind": "ENUM",
+          "description": null,
+          "fields": null
+        },
+        {
+          "name": "ShowtimeNodeConnection",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "pageInfo",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "edges",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ShowtimeNodeEdge",
+          "kind": "OBJECT",
+          "description": null,
+          "fields": [
+            {
+              "name": "node",
+              "description": "The item at the end of the edge",
+              "type": {
+                "name": "ShowtimeNode"
+              },
+              "args": []
+            },
+            {
+              "name": "cursor",
+              "description": "A cursor for use in pagination",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Schema",
+          "kind": "OBJECT",
+          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.",
+          "fields": [
+            {
+              "name": "types",
+              "description": "A list of all types supported by this server.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "queryType",
+              "description": "The type that query operations will be rooted at.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "mutationType",
+              "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            },
+            {
+              "name": "subscriptionType",
+              "description": "If this server support subscription, the type that subscription operations will be rooted at.",
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            },
+            {
+              "name": "directives",
+              "description": "A list of all directives supported by this server.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Type",
+          "kind": "OBJECT",
+          "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+          "fields": [
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "fields",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false",
+                  "type": {
+                    "name": "Boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "interfaces",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "possibleTypes",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "enumValues",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false",
+                  "type": {
+                    "name": "Boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "inputFields",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "ofType",
+              "description": null,
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__TypeKind",
+          "kind": "ENUM",
+          "description": "An enum describing what kind of type a given `__Type` is",
+          "fields": null
+        },
+        {
+          "name": "__Field",
+          "kind": "OBJECT",
+          "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "args",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "isDeprecated",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "deprecationReason",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__InputValue",
+          "kind": "OBJECT",
+          "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "defaultValue",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__EnumValue",
+          "kind": "OBJECT",
+          "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "isDeprecated",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "deprecationReason",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Directive",
+          "kind": "OBJECT",
+          "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "locations",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "args",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__DirectiveLocation",
+          "kind": "ENUM",
+          "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+          "fields": null
+        }
+      ]
     }
   }
 }
