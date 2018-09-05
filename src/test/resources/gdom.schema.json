@@ -1,0 +1,1203 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": {
+        "name": "Query"
+      },
+      "types": [
+        {
+          "name": "Query",
+          "kind": "OBJECT",
+          "description": null,
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "page",
+              "description": "Visit the specified page",
+              "type": {
+                "name": "Document"
+              },
+              "args": [
+                {
+                  "name": "url",
+                  "description": "The url of the page",
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "source",
+                  "description": "The source of the page",
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Document",
+          "kind": "OBJECT",
+          "description": "\n    The Document Type represent any web page loaded and\n    serves as an entry point into the page content\n    ",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "content",
+              "description": "The html representation of the subnodes for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "html",
+              "description": "The html representation of the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "text",
+              "description": "The text for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "tag",
+              "description": "The tag for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "attr",
+              "description": "The DOM attr of the Node",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "name",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "is",
+              "description": "Returns True if the DOM matches the selector",
+              "type": {
+                "name": "Boolean"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "query",
+              "description": "Find elements using selector traversing down from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "children",
+              "description": "The list of children elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parents",
+              "description": "The list of parent elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parent",
+              "description": "The parent element from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": []
+            },
+            {
+              "name": "siblings",
+              "description": "The siblings elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "next",
+              "description": "The immediately following sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "nextAll",
+              "description": "The list of following siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prev",
+              "description": "The immediately preceding sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prevAll",
+              "description": "The list of preceding siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "title",
+              "description": "The title of the document",
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "Node",
+          "kind": "INTERFACE",
+          "description": "A Node represents a DOM Node",
+          "possibleTypes": [
+            {
+              "name": "Document"
+            },
+            {
+              "name": "Element"
+            }
+          ],
+          "fields": [
+            {
+              "name": "content",
+              "description": "The html representation of the subnodes for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "html",
+              "description": "The html representation of the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "text",
+              "description": "The text for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "tag",
+              "description": "The tag for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "attr",
+              "description": "The DOM attr of the Node",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "name",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "is",
+              "description": "Returns True if the DOM matches the selector",
+              "type": {
+                "name": "Boolean"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "query",
+              "description": "Find elements using selector traversing down from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "children",
+              "description": "The list of children elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parents",
+              "description": "The list of parent elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parent",
+              "description": "The parent element from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": []
+            },
+            {
+              "name": "siblings",
+              "description": "The siblings elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "next",
+              "description": "The immediately following sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "nextAll",
+              "description": "The list of following siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prev",
+              "description": "The immediately preceding sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prevAll",
+              "description": "The list of preceding siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "String",
+          "kind": "SCALAR",
+          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+          "possibleTypes": null,
+          "fields": null
+        },
+        {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "possibleTypes": null,
+          "fields": null
+        },
+        {
+          "name": "Element",
+          "kind": "OBJECT",
+          "description": "\n    A Element Type represents an object in a Document\n    ",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "content",
+              "description": "The html representation of the subnodes for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "html",
+              "description": "The html representation of the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "text",
+              "description": "The text for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "tag",
+              "description": "The tag for the selected DOM",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "attr",
+              "description": "The DOM attr of the Node",
+              "type": {
+                "name": "String"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "name",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "is",
+              "description": "Returns True if the DOM matches the selector",
+              "type": {
+                "name": "Boolean"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "query",
+              "description": "Find elements using selector traversing down from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": null
+                  }
+                }
+              ]
+            },
+            {
+              "name": "children",
+              "description": "The list of children elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parents",
+              "description": "The list of parent elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "parent",
+              "description": "The parent element from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": []
+            },
+            {
+              "name": "siblings",
+              "description": "The siblings elements from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "next",
+              "description": "The immediately following sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "nextAll",
+              "description": "The list of following siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prev",
+              "description": "The immediately preceding sibling from self",
+              "type": {
+                "name": "Element"
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "prevAll",
+              "description": "The list of preceding siblings from self",
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "selector",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "visit",
+              "description": "Visit will visit the href of the link and return the corresponding document",
+              "type": {
+                "name": "Document"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Schema",
+          "kind": "OBJECT",
+          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "types",
+              "description": "A list of all types supported by this server.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "queryType",
+              "description": "The type that query operations will be rooted at.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "mutationType",
+              "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            },
+            {
+              "name": "subscriptionType",
+              "description": "If this server support subscription, the type that subscription operations will be rooted at.",
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            },
+            {
+              "name": "directives",
+              "description": "A list of all directives supported by this server.",
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Type",
+          "kind": "OBJECT",
+          "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "fields",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false",
+                  "type": {
+                    "name": "Boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "interfaces",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "possibleTypes",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "enumValues",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false",
+                  "type": {
+                    "name": "Boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "inputFields",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "ofType",
+              "description": null,
+              "type": {
+                "name": "__Type"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__TypeKind",
+          "kind": "ENUM",
+          "description": "An enum describing what kind of type a given `__Type` is",
+          "possibleTypes": null,
+          "fields": null
+        },
+        {
+          "name": "__Field",
+          "kind": "OBJECT",
+          "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "args",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "isDeprecated",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "deprecationReason",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__InputValue",
+          "kind": "OBJECT",
+          "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "defaultValue",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__EnumValue",
+          "kind": "OBJECT",
+          "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "isDeprecated",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "deprecationReason",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__Directive",
+          "kind": "OBJECT",
+          "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+          "possibleTypes": null,
+          "fields": [
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "name": "String"
+              },
+              "args": []
+            },
+            {
+              "name": "locations",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            },
+            {
+              "name": "args",
+              "description": null,
+              "type": {
+                "name": null
+              },
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "__DirectiveLocation",
+          "kind": "ENUM",
+          "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+          "possibleTypes": null,
+          "fields": null
+        }
+      ]
+    }
+  }
+}
