@@ -22,9 +22,9 @@ public class ClientForm extends Form {
         Form.setLabel(apiURI, "URI");
         section.add(apiURI);
 
-        TextInput apiDesc = new TextInput();
-        apiDesc.setTextKey("api.description");
-        Form.setLabel(apiDesc, "Description");
-        section.add(apiDesc);
+        TextInput desc = new TextInput();
+        desc.setTextKey("api.description");
+        Form.setLabel(desc, "Description");
+        section.add(desc);
     }
 }

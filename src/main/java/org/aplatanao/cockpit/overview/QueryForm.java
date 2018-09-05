@@ -22,10 +22,10 @@ public class QueryForm extends Form {
         Form.setLabel(type, "Type");
         section.add(type);
 
-        TextInput apiDesc = new TextInput();
-        apiDesc.setTextKey("description");
-        Form.setLabel(apiDesc, "Description");
-        section.add(apiDesc);
+        TextInput desc = new TextInput();
+        desc.setTextKey("description");
+        Form.setLabel(desc, "Description");
+        section.add(desc);
 
     }
 }

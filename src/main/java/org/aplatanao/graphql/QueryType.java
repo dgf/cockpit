@@ -3,7 +3,7 @@ package org.aplatanao.graphql;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Query {
+public class QueryType {
 
     public String name;
 
@@ -17,7 +17,7 @@ public class Query {
         return name;
     }
 
-    public Query setName(String name) {
+    public QueryType setName(String name) {
         this.name = name;
         return this;
     }
@@ -26,7 +26,7 @@ public class Query {
         return description;
     }
 
-    public Query setDescription(String description) {
+    public QueryType setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -35,7 +35,7 @@ public class Query {
         return type;
     }
 
-    public Query setType(TypeRef type) {
+    public QueryType setType(TypeRef type) {
         this.type = type;
         return this;
     }
@@ -44,14 +44,14 @@ public class Query {
         return args;
     }
 
-    public Query setArgs(List<Argument> args) {
+    public QueryType setArgs(List<Argument> args) {
         this.args = args;
         return this;
     }
 
     @Override
     public String toString() {
-        return "Query{" +
+        return "QueryType{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", type='" + type + '\'' +

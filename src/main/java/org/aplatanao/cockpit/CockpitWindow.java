@@ -3,13 +3,14 @@ package org.aplatanao.cockpit;
 import org.apache.pivot.wtk.Display;
 import org.apache.pivot.wtk.Window;
 import org.aplatanao.cockpit.main.CockpitMain;
+import org.aplatanao.cockpit.navigation.CockpitNavigation;
 
 public class CockpitWindow extends Window {
 
-    private CockpitMain main;
+    private CockpitNavigation navigation;
 
-    public CockpitWindow(CockpitLayout layout, CockpitMain main) {
-        this.main = main;
+    public CockpitWindow(CockpitLayout layout, CockpitNavigation navigation) {
+        this.navigation = navigation;
         setTitle("Cockpit");
         setStyleName("window");
         setMaximized(true);
@@ -19,6 +20,6 @@ public class CockpitWindow extends Window {
     @Override
     public void open(Display display, Window ownerArgument) {
         super.open(display, ownerArgument);
-        main.requestFocus();
+        System.out.println("navigation focus: " + navigation.requestFocus());
     }
 }

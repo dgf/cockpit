@@ -22,9 +22,9 @@ public class TypeForm extends Form {
         Form.setLabel(kind, "Kind");
         section.add(kind);
 
-        TextInput apiDesc = new TextInput();
-        apiDesc.setTextKey("description");
-        Form.setLabel(apiDesc, "Description");
-        section.add(apiDesc);
+        TextInput desc = new TextInput();
+        desc.setTextKey("description");
+        Form.setLabel(desc, "Description");
+        section.add(desc);
     }
 }

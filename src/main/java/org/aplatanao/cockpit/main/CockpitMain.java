@@ -3,8 +3,9 @@ package org.aplatanao.cockpit.main;
 import org.apache.pivot.wtk.Border;
 import org.apache.pivot.wtk.ScrollPane;
 import org.apache.pivot.wtk.SplitPane;
-import org.aplatanao.cockpit.overview.CockpitOverview;
+import org.aplatanao.cockpit.content.CockpitContent;
 import org.aplatanao.cockpit.navigation.CockpitNavigation;
+import org.aplatanao.cockpit.overview.CockpitOverview;
 
 public class CockpitMain extends Border {
 
@@ -18,7 +19,7 @@ public class CockpitMain extends Border {
         overviewScroll.setView(overview);
 
         SplitPane right = new SplitPane();
-        right.setSplitRatio(0.51f);
+        right.setSplitRatio(0.57f);
         right.setLeft(new Border(content));
         right.setRight(new Border(overviewScroll));
 

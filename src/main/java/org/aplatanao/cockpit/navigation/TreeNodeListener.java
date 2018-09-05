@@ -44,17 +44,7 @@ public class TreeNodeListener implements TreeViewSelectionListener, ComponentKey
     private boolean open(Component component) {
         if (component instanceof CockpitNavigation) {
             TreeView tree = (TreeView) component;
-            Sequence.Tree.Path path = tree.getSelectedPath();
             Object selected = tree.getSelectedNode();
-
-            if (selected instanceof TreeBranch) {
-                boolean expanded = true;
-                if (tree.isBranchExpanded(path)) {
-                    expanded = false;
-                }
-                tree.setBranchExpanded(path, expanded);
-                return true;
-            }
             if (selected instanceof TreeNode) {
                 content.show((TreeNode) selected);
                 return true;
@@ -93,7 +83,19 @@ public class TreeNodeListener implements TreeViewSelectionListener, ComponentKey
     @Override
     public boolean keyReleased(Component component, int keyCode, Keyboard.KeyLocation keyLocation) {
         if (keyCode == Keyboard.KeyCode.ENTER) {
-            return open(component);
+            if (component instanceof CockpitNavigation) {
+                TreeView tree = (TreeView) component;
+                Sequence.Tree.Path path = tree.getSelectedPath();
+                Object selected = tree.getSelectedNode();
+                if (selected instanceof TreeBranch) {
+                    boolean expanded = true;
+                    if (tree.isBranchExpanded(path)) {
+                        expanded = false;
+                    }
+                    tree.setBranchExpanded(path, expanded);
+                }
+                return open(component);
+            }
         }
         return false;
     }

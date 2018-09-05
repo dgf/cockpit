@@ -19,22 +19,23 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class Client {
 
-    protected ObjectMapper mapper = new ObjectMapper();
+    private ObjectMapper mapper = new ObjectMapper();
 
-    protected CloseableHttpClient client = HttpClients.createDefault();
+    private CloseableHttpClient client = HttpClients.createDefault();
 
     private URI endpoint;
 
     public API api;
 
-    private List<Query> queries = new ArrayList<>();
+    private Map<String, QueryType> queries = new HashMap<>();
 
-    private List<Type> types = new ArrayList<>();
+    private Map<String, Type> types = new HashMap<>();
 
     private boolean initialized = false;
 
@@ -56,10 +57,12 @@ public class Client {
             JsonNode schema = node.path("data").path("__schema");
 
             for (JsonNode t : schema.path("types")) {
-                types.add(mapper.treeToValue(t, Type.class));
+                Type type = mapper.treeToValue(t, Type.class);
+                types.put(type.getName(), type);
             }
             for (JsonNode q : schema.path("queryType").path("fields")) {
-                queries.add(mapper.treeToValue(q, Query.class));
+                QueryType queryType = mapper.treeToValue(q, QueryType.class);
+                queries.put(queryType.getName(), queryType);
             }
             initialized = true;
         } catch (IOException | URISyntaxException e) {
@@ -87,24 +90,39 @@ public class Client {
         return mapper.readValue(response.getEntity().getContent(), ObjectNode.class);
     }
 
-    public List<Query> getQueries() {
-        return queries;
+    public URI getEndpoint() {
+        return endpoint;
     }
 
-    public Client setQueries(List<Query> queries) {
-        this.queries = queries;
+    public Client setEndpoint(URI endpoint) {
+        this.endpoint = endpoint;
         return this;
     }
 
-    public List<Type> getTypes() {
-        return types;
+    public API getApi() {
+        return api;
     }
 
-    public Client setTypes(List<Type> types) {
-        this.types = types;
+    public Client setApi(API api) {
+        this.api = api;
         return this;
     }
 
+    public Set<String> getQueries() {
+        return queries.keySet();
+    }
+
+    public QueryType getQuery(String name) {
+        return queries.get(name);
+    }
+
+    public Set<String> getTypes() {
+        return types.keySet();
+    }
+
+    public Type getType(String name) {
+        return types.get(name);
+    }
 
     public boolean isInitialized() {
         return initialized;
@@ -114,7 +132,4 @@ public class Client {
         return status;
     }
 
-    public API getAPI() {
-        return api;
-    }
 }

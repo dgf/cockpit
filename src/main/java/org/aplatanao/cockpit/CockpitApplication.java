@@ -15,9 +15,9 @@ public class CockpitApplication implements Application {
 
     public void startup(Display display, Map<String, String> properties) throws Exception {
         window = context.get(CockpitWindow.class);
-        window.open(display);
         window.setWidth(400);
         window.setHeight(300);
+        window.open(display);
     }
 
     public boolean shutdown(boolean optional) throws Exception {
