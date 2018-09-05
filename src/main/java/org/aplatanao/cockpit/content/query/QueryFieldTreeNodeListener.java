@@ -5,23 +5,7 @@ import org.apache.pivot.wtk.*;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 
-public class QueryFieldTreeNodeListener implements TreeViewSelectionListener, ComponentKeyListener {
-
-    @Override
-    public void selectedPathAdded(TreeView treeView, Sequence.Tree.Path path) {
-    }
-
-    @Override
-    public void selectedPathRemoved(TreeView treeView, Sequence.Tree.Path path) {
-    }
-
-    @Override
-    public void selectedPathsChanged(TreeView treeView, Sequence<Sequence.Tree.Path> previousSelectedPaths) {
-    }
-
-    @Override
-    public void selectedNodeChanged(TreeView treeView, Object previousSelectedNode) {
-    }
+public class QueryFieldTreeNodeListener implements ComponentKeyListener, TreeViewNodeStateListener {
 
     @Override
     public boolean keyTyped(Component component, char character) {
@@ -36,28 +20,36 @@ public class QueryFieldTreeNodeListener implements TreeViewSelectionListener, Co
     @Override
     public boolean keyReleased(Component component, int keyCode, Keyboard.KeyLocation keyLocation) {
         if (keyCode == Keyboard.KeyCode.SPACE) {
-            if (component instanceof QueryFieldTree) {
-                QueryFieldTree tree = (QueryFieldTree) component;
-                Sequence.Tree.Path path = tree.getSelectedPath();
-                Object selected = tree.getSelectedNode();
-                if (selected instanceof TreeNode) {
-                    TreeNode node = (TreeNode) selected;
-                    QueryFieldTreeEntry data = (QueryFieldTreeEntry) node.getUserData();
-                    if (data.isChecked()) {
-                        data.setChecked(false);
-                        // TODO remove form parts
-                        tree.setBranchExpanded(path, false);
-                    } else {
-                        data.setChecked(true);
-                        if (selected instanceof TreeBranch) {
-                            tree.setBranchExpanded(path, true);
-                        }
-                        // TODO add form parts
-                    }
+            QueryFieldTree tree = (QueryFieldTree) component;
+            Sequence.Tree.Path path = tree.getSelectedPath();
+            Object selected = tree.getSelectedNode();
+            if (selected instanceof TreeBranch) {
+                TreeBranch branch = (TreeBranch) selected;
+                QueryFieldTreeEntry data = (QueryFieldTreeEntry) branch.getUserData();
+                if (data.isChecked()) {
+                    data.setChecked(false);
+                } else {
+                    data.setChecked(true);
+                    tree.loadFieldsOnce(branch, data.getField());
+                    tree.setBranchExpanded(path, true);
                 }
-                return true;
             }
+            if (selected instanceof TreeNode) {
+                TreeNode node = (TreeNode) selected;
+                QueryFieldTreeEntry data = (QueryFieldTreeEntry) node.getUserData();
+                if (data.isChecked()) {
+                    data.setChecked(false);
+                } else {
+                    data.setChecked(true);
+                }
+            }
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public void nodeCheckStateChanged(TreeView treeView, Sequence.Tree.Path path, TreeView.NodeCheckState previousCheckState) {
+        // TODO add/hide/show parameters
     }
 }

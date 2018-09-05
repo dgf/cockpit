@@ -1,7 +1,5 @@
 package org.aplatanao.cockpit.content.query;
 
-import org.apache.pivot.collections.ArrayList;
-import org.apache.pivot.collections.List;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
@@ -13,8 +11,12 @@ import java.util.Comparator;
 
 public class QueryFieldTree extends TreeView {
 
+    private TreeBranch tree = new TreeBranch();
+
+    private Client client;
+
     public QueryFieldTree(Client client, Type type) {
-        List<Object> tree = new ArrayList<>();
+        this.client = client;
         setTreeData(tree);
         setCheckmarksEnabled(true);
 
@@ -22,15 +24,15 @@ public class QueryFieldTree extends TreeView {
         setNodeRenderer(renderer);
 
         QueryFieldTreeNodeListener listener = new QueryFieldTreeNodeListener();
-        getTreeViewSelectionListeners().add(listener);
+        getTreeViewNodeStateListeners().add(listener);
         getComponentKeyListeners().add(listener);
 
         type.getFields().stream()
                 .sorted(Comparator.comparing(Field::getName))
-                .forEach(f -> addField(tree, client, f));
+                .forEach(f -> add(tree, f));
     }
 
-    private void addField(List<Object> tree, Client client, Field field) {
+    private void add(TreeBranch tree, Field field) {
         Type type = client.getType(field.getType().getName());
         if (type != null && "OBJECT".equals(type.getKind())) {
             TreeBranch branch = new TreeBranch(field.getName());
@@ -42,4 +44,13 @@ public class QueryFieldTree extends TreeView {
         node.setUserData(new QueryFieldTreeEntry(field));
         tree.add(node);
     }
+
+    public void loadFieldsOnce(TreeBranch branch, Field field) {
+        if (branch.isEmpty()) {
+            client.getType(field.getType().getName()).getFields().stream()
+                    .sorted(Comparator.comparing(Field::getName))
+                    .forEach(f -> add(branch, f));
+        }
+    }
+
 }
