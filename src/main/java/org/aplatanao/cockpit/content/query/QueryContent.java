@@ -1,16 +1,18 @@
 package org.aplatanao.cockpit.content.query;
 
-import org.apache.pivot.wtk.*;
-import org.aplatanao.graphql.Argument;
+import org.apache.pivot.wtk.BoxPane;
+import org.apache.pivot.wtk.Orientation;
+import org.apache.pivot.wtk.ScrollPane;
+import org.apache.pivot.wtk.TablePane;
 import org.aplatanao.graphql.Client;
-import org.aplatanao.graphql.QueryType;
+import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;
-
-import java.util.Comparator;
 
 public class QueryContent extends TablePane {
 
-    public QueryContent(Client client, QueryType queryType) {
+    public QueryContent(Client client, Field field) {
+        String typeName = field.getType().getName();
+        Type type = client.getType(typeName);
         setStyleName("query");
 
         Column column = new Column();
@@ -20,11 +22,11 @@ public class QueryContent extends TablePane {
         BoxPane main = new BoxPane();
         main.setOrientation(Orientation.HORIZONTAL);
 
-        Type type = client.getType(queryType.getType().getName());
+        QueryForm form = new QueryForm(field);
         if ("OBJECT".equals(type.getKind())) {
-            main.add(new QueryFieldTree(client, type));
+            main.add(new QueryFieldTree(form, client, type));
         }
-        main.add(loadForm(queryType));
+        main.add(form);
 
         ScrollPane mainScroll = new ScrollPane();
         mainScroll.setView(main);
@@ -39,22 +41,4 @@ public class QueryContent extends TablePane {
         getRows().add(previewRow);
     }
 
-    private Form loadForm(QueryType queryType) {
-        Form form = new Form();
-
-        Form.Section section = new Form.Section();
-        section.setHeading("Arguments");
-        form.getSections().add(section);
-
-        queryType.getArgs().stream()
-                .sorted(Comparator.comparing(Argument::getName))
-                .forEach(a -> {
-                    TextInput input = new TextInput();
-                    Form.setLabel(input, a.getName());
-                    section.add(input);
-                });
-
-        form.load(queryType);
-        return form;
-    }
 }

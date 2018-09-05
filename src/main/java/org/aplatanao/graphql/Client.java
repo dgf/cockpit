@@ -19,9 +19,8 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Client {
 
@@ -33,7 +32,7 @@ public class Client {
 
     public API api;
 
-    private Map<String, QueryType> queries = new HashMap<>();
+    private Type queryType;
 
     private Map<String, Type> types = new HashMap<>();
 
@@ -55,15 +54,11 @@ public class Client {
         try {
             ObjectNode node = execute(getSchemaQuery());
             JsonNode schema = node.path("data").path("__schema");
-
             for (JsonNode t : schema.path("types")) {
                 Type type = mapper.treeToValue(t, Type.class);
                 types.put(type.getName(), type);
             }
-            for (JsonNode q : schema.path("queryType").path("fields")) {
-                QueryType queryType = mapper.treeToValue(q, QueryType.class);
-                queries.put(queryType.getName(), queryType);
-            }
+            queryType = types.get(mapper.treeToValue(schema.path("queryType"), TypeRef.class).getName());
             initialized = true;
         } catch (IOException | URISyntaxException e) {
             initialized = false;
@@ -108,12 +103,14 @@ public class Client {
         return this;
     }
 
-    public Set<String> getQueries() {
-        return queries.keySet();
+    public Field getQuery(String name) {
+        return queryType.getFields().stream().filter(f -> f.getName().equals(name)).findFirst().orElse(null);
     }
 
-    public QueryType getQuery(String name) {
-        return queries.get(name);
+    public List<Field> getQueries() {
+        return queryType.getFields().stream()
+                .sorted(Comparator.comparing(Field::getName))
+                .collect(Collectors.toList());
     }
 
     public Set<String> getTypes() {
@@ -131,5 +128,4 @@ public class Client {
     public String getStatus() {
         return status;
     }
-
 }

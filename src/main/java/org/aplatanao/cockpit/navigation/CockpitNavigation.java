@@ -10,7 +10,7 @@ import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.API;
 import org.aplatanao.graphql.Client;
-import org.aplatanao.graphql.QueryType;
+import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;
 
 import java.net.URISyntaxException;
@@ -64,10 +64,7 @@ public class CockpitNavigation extends TreeView {
                     branch.add(types);
 
                     TreeBranch queries = new TreeBranch("queries");
-                    for (QueryType query : client.getQueries().stream()
-                            .sorted(String::compareTo)
-                            .map(client::getQuery)
-                            .collect(Collectors.toList())) {
+                    for (Field query : client.getQueries()) {
                         TreeNode node = new TreeNode(query.getName());
                         node.setUserData(query);
                         queries.add(node);
@@ -79,7 +76,7 @@ public class CockpitNavigation extends TreeView {
 
             @Override
             public void executeFailed(Task<Boolean> task) {
-                // report error
+                // report error?
             }
         }));
     }

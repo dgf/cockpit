@@ -1,26 +1,15 @@
 {
   __schema {
     queryType {
-      fields {
-        name
-        description
-        type {
-          name
-        }
-        args {
-          name
-          description
-          defaultValue
-          type {
-            name
-          }
-        }
-      }
+      name
     }
     types {
       name
       kind
       description
+      possibleTypes {
+        name
+      }
       fields {
         name
         description

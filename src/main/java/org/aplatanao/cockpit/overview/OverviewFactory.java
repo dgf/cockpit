@@ -2,7 +2,7 @@ package org.aplatanao.cockpit.overview;
 
 import org.apache.pivot.wtk.Form;
 import org.aplatanao.graphql.Client;
-import org.aplatanao.graphql.QueryType;
+import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;
 
 public class OverviewFactory {
@@ -11,7 +11,7 @@ public class OverviewFactory {
         if (data instanceof Client) {
             return new ClientForm();
         }
-        if (data instanceof QueryType) {
+        if (data instanceof Field) {
             return new QueryForm();
         }
         if (data instanceof Type) {

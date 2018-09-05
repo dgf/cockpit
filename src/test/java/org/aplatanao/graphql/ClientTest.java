@@ -32,7 +32,7 @@ public class ClientTest {
     private MockServerClient server;
 
     private String mockedSchema() throws IOException, URISyntaxException {
-        URL url = getClass().getResource("/schema.json");
+        URL url = getClass().getResource("/etmdb.schema.json");
         return new String(Files.readAllBytes(Paths.get(url.toURI())), StandardCharsets.UTF_8);
     }
 

@@ -11,6 +11,8 @@ public class Type {
 
     public String description;
 
+    public List<TypeRef> possibleTypes = new ArrayList<>();
+
     public List<Field> fields = new ArrayList<>();
 
     public String getName() {
@@ -46,6 +48,15 @@ public class Type {
 
     public Type setFields(List<Field> fields) {
         this.fields = fields;
+        return this;
+    }
+
+    public List<TypeRef> getPossibleTypes() {
+        return possibleTypes;
+    }
+
+    public Type setPossibleTypes(List<TypeRef> possibleTypes) {
+        this.possibleTypes = possibleTypes;
         return this;
     }
 

@@ -7,7 +7,7 @@ import org.apache.pivot.wtk.Form;
 import org.apache.pivot.wtk.Orientation;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.Client;
-import org.aplatanao.graphql.QueryType;
+import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;
 
 public class CockpitOverview extends BoxPane {
@@ -60,7 +60,7 @@ public class CockpitOverview extends BoxPane {
         if (data instanceof Client && "client".equals(form.getName())) {
             return true;
         }
-        if (data instanceof QueryType && "query".equals(form.getName())) {
+        if (data instanceof Field && "query".equals(form.getName())) {
             return true;
         }
         if (data instanceof Type && "type".equals(form.getName())) {

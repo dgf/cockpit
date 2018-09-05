@@ -2,790 +2,14 @@
   "data": {
     "__schema": {
       "queryType": {
-        "fields": [
-          {
-            "name": "cinemaDetail",
-            "description": "The ID of the object",
-            "type": {
-              "name": "CinemaDetailNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allCinemaDetails",
-            "description": null,
-            "type": {
-              "name": "CinemaDetailNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "filmographyType",
-            "description": "The ID of the object",
-            "type": {
-              "name": "FilmographyTypeNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allFilmographyTypes",
-            "description": null,
-            "type": {
-              "name": "FilmographyTypeNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "genreType",
-            "description": "The ID of the object",
-            "type": {
-              "name": "GenreTypeNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allGenreTypes",
-            "description": null,
-            "type": {
-              "name": "GenreTypeNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "job",
-            "description": "The ID of the object",
-            "type": {
-              "name": "JobBoardNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allJobs",
-            "description": null,
-            "type": {
-              "name": "JobBoardNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "genderMf",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "company",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "ID"
-                }
-              },
-              {
-                "name": "company_Icontains",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "ID"
-                }
-              },
-              {
-                "name": "company_Istartswith",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "ID"
-                }
-              },
-              {
-                "name": "jobTitle",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "jobTitle_Icontains",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "jobTitle_Istartswith",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              }
-            ]
-          },
-          {
-            "name": "company",
-            "description": "The ID of the object",
-            "type": {
-              "name": "CompanyNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allCompanies",
-            "description": null,
-            "type": {
-              "name": "CompanyNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "companyName",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "establishedIn",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              }
-            ]
-          },
-          {
-            "name": "jobsTag",
-            "description": "The ID of the object",
-            "type": {
-              "name": "JobTagNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allJobTags",
-            "description": null,
-            "type": {
-              "name": "JobTagNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "newsTag",
-            "description": "The ID of the object",
-            "type": {
-              "name": "NewsTagNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allNewsTags",
-            "description": null,
-            "type": {
-              "name": "NewsTagNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "news",
-            "description": "The ID of the object",
-            "type": {
-              "name": "NewsNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allNews",
-            "description": null,
-            "type": {
-              "name": "NewsNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "role",
-            "description": "The ID of the object",
-            "type": {
-              "name": "RoleNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allRoles",
-            "description": null,
-            "type": {
-              "name": "RoleNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "contentTag",
-            "description": "The ID of the object",
-            "type": {
-              "name": "ContentTagNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allContentTags",
-            "description": null,
-            "type": {
-              "name": "ContentTagNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "cinemaSchedule",
-            "description": "The ID of the object",
-            "type": {
-              "name": "CinemaScheduleNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allCinemaSchedules",
-            "description": null,
-            "type": {
-              "name": "CinemaScheduleNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "showtime",
-            "description": "The ID of the object",
-            "type": {
-              "name": "ShowtimeNode"
-            },
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": null
-                }
-              }
-            ]
-          },
-          {
-            "name": "allShowtimes",
-            "description": null,
-            "type": {
-              "name": "ShowtimeNodeConnection"
-            },
-            "args": [
-              {
-                "name": "before",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "after",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "String"
-                }
-              },
-              {
-                "name": "first",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              },
-              {
-                "name": "last",
-                "description": null,
-                "defaultValue": null,
-                "type": {
-                  "name": "Int"
-                }
-              }
-            ]
-          },
-          {
-            "name": "hello",
-            "description": null,
-            "type": {
-              "name": "String"
-            },
-            "args": []
-          }
-        ]
+        "name": "Query"
       },
       "types": [
         {
           "name": "Query",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "cinemaDetail",
@@ -1018,7 +242,23 @@
                   }
                 },
                 {
-                  "name": "genderMf",
+                  "name": "jobTitle",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Istartswith",
                   "description": null,
                   "defaultValue": null,
                   "type": {
@@ -1050,23 +290,7 @@
                   }
                 },
                 {
-                  "name": "jobTitle",
-                  "description": null,
-                  "defaultValue": null,
-                  "type": {
-                    "name": "String"
-                  }
-                },
-                {
-                  "name": "jobTitle_Icontains",
-                  "description": null,
-                  "defaultValue": null,
-                  "type": {
-                    "name": "String"
-                  }
-                },
-                {
-                  "name": "jobTitle_Istartswith",
+                  "name": "genderMf",
                   "description": null,
                   "defaultValue": null,
                   "type": {
@@ -1569,6 +793,7 @@
           "name": "CinemaDetailNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -1673,6 +898,47 @@
           "name": "Node",
           "kind": "INTERFACE",
           "description": "An object with an ID",
+          "possibleTypes": [
+            {
+              "name": "CinemaDetailNode"
+            },
+            {
+              "name": "CinemaScheduleNode"
+            },
+            {
+              "name": "MovieMetaDataNode"
+            },
+            {
+              "name": "FilmographyTypeNode"
+            },
+            {
+              "name": "GenreTypeNode"
+            },
+            {
+              "name": "JobBoardNode"
+            },
+            {
+              "name": "CompanyNode"
+            },
+            {
+              "name": "JobTagNode"
+            },
+            {
+              "name": "ContentTagNode"
+            },
+            {
+              "name": "NewsTagNode"
+            },
+            {
+              "name": "NewsNode"
+            },
+            {
+              "name": "RoleNode"
+            },
+            {
+              "name": "ShowtimeNode"
+            }
+          ],
           "fields": [
             {
               "name": "id",
@@ -1688,30 +954,35 @@
           "name": "ID",
           "kind": "SCALAR",
           "description": "The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `\"4\"`) or integer (such as `4`) input value will be accepted as an ID.",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "DateTime",
           "kind": "SCALAR",
           "description": "The `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "String",
           "kind": "SCALAR",
           "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "Int",
           "kind": "SCALAR",
           "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^53 - 1) and 2^53 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaScheduleNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -1735,6 +1006,7 @@
           "name": "PageInfo",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "hasNextPage",
@@ -1774,12 +1046,14 @@
           "name": "Boolean",
           "kind": "SCALAR",
           "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaScheduleNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -1803,6 +1077,7 @@
           "name": "CinemaScheduleNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Cinema Schedule.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -1874,6 +1149,7 @@
           "name": "MovieMetaDataNode",
           "kind": "OBJECT",
           "description": "\n    Represents a movie on EtMDB.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2050,12 +1326,14 @@
           "name": "MovieMetaDataAgeRestriction",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaDetailNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2079,6 +1357,7 @@
           "name": "CinemaDetailNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -2102,6 +1381,7 @@
           "name": "FilmographyTypeNode",
           "kind": "OBJECT",
           "description": "\n    Represents the types of filmographies.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2157,6 +1437,7 @@
           "name": "FilmographyTypeNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2180,6 +1461,7 @@
           "name": "FilmographyTypeNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -2203,6 +1485,7 @@
           "name": "GenreTypeNode",
           "kind": "OBJECT",
           "description": "\n    Represents the types of movie genres.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2258,6 +1541,7 @@
           "name": "GenreTypeNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2281,6 +1565,7 @@
           "name": "GenreTypeNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -2304,6 +1589,7 @@
           "name": "JobBoardNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for jobs listed on EtMDB.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2472,30 +1758,35 @@
           "name": "JobBoardLocation",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardProductionType",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardGenderMf",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardAgeLevel",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CompanyNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2617,7 +1908,23 @@
                   }
                 },
                 {
-                  "name": "genderMf",
+                  "name": "jobTitle",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Icontains",
+                  "description": null,
+                  "defaultValue": null,
+                  "type": {
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "jobTitle_Istartswith",
                   "description": null,
                   "defaultValue": null,
                   "type": {
@@ -2649,23 +1956,7 @@
                   }
                 },
                 {
-                  "name": "jobTitle",
-                  "description": null,
-                  "defaultValue": null,
-                  "type": {
-                    "name": "String"
-                  }
-                },
-                {
-                  "name": "jobTitle_Icontains",
-                  "description": null,
-                  "defaultValue": null,
-                  "type": {
-                    "name": "String"
-                  }
-                },
-                {
-                  "name": "jobTitle_Istartswith",
+                  "name": "genderMf",
                   "description": null,
                   "defaultValue": null,
                   "type": {
@@ -2680,12 +1971,14 @@
           "name": "Time",
           "kind": "SCALAR",
           "description": "The `Time` scalar type represents a Time value as\nspecified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2709,6 +2002,7 @@
           "name": "JobBoardNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -2732,6 +2026,7 @@
           "name": "JobTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2755,6 +2050,7 @@
           "name": "JobTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -2778,6 +2074,7 @@
           "name": "JobTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Job tag.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2833,6 +2130,7 @@
           "name": "ContentTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Content tag.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -2970,6 +2268,7 @@
           "name": "NewsTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -2993,6 +2292,7 @@
           "name": "NewsTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3016,6 +2316,7 @@
           "name": "NewsTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a News and Articles tags.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -3071,6 +2372,7 @@
           "name": "NewsNode",
           "kind": "OBJECT",
           "description": "\n    Represents a News and Articles.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -3175,6 +2477,7 @@
           "name": "CompanyNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -3198,6 +2501,7 @@
           "name": "CompanyNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3221,6 +2525,7 @@
           "name": "NewsNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -3244,6 +2549,7 @@
           "name": "NewsNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3267,6 +2573,7 @@
           "name": "RoleNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Movie Roles for cast.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -3322,6 +2629,7 @@
           "name": "RoleNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -3345,6 +2653,7 @@
           "name": "RoleNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3368,6 +2677,7 @@
           "name": "ContentTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -3391,6 +2701,7 @@
           "name": "ContentTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3414,6 +2725,7 @@
           "name": "ShowtimeNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Cinema Show times.\n    ",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
@@ -3469,12 +2781,14 @@
           "name": "ShowtimeDayOfWeek",
           "kind": "ENUM",
           "description": null,
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "ShowtimeNodeConnection",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
@@ -3498,6 +2812,7 @@
           "name": "ShowtimeNodeEdge",
           "kind": "OBJECT",
           "description": null,
+          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
@@ -3521,6 +2836,7 @@
           "name": "__Schema",
           "kind": "OBJECT",
           "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "types",
@@ -3568,6 +2884,7 @@
           "name": "__Type",
           "kind": "OBJECT",
           "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "kind",
@@ -3665,12 +2982,14 @@
           "name": "__TypeKind",
           "kind": "ENUM",
           "description": "An enum describing what kind of type a given `__Type` is",
+          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "__Field",
           "kind": "OBJECT",
           "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
@@ -3726,6 +3045,7 @@
           "name": "__InputValue",
           "kind": "OBJECT",
           "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
@@ -3765,6 +3085,7 @@
           "name": "__EnumValue",
           "kind": "OBJECT",
           "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
@@ -3804,6 +3125,7 @@
           "name": "__Directive",
           "kind": "OBJECT",
           "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
@@ -3843,6 +3165,7 @@
           "name": "__DirectiveLocation",
           "kind": "ENUM",
           "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
+          "possibleTypes": null,
           "fields": null
         }
       ]
