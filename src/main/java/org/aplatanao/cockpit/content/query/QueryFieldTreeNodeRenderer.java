@@ -5,6 +5,7 @@ import org.apache.pivot.wtk.Label;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.Field;
+import org.aplatanao.graphql.Type;
 
 public class QueryFieldTreeNodeRenderer extends Label implements TreeView.NodeRenderer {
 
@@ -19,7 +20,11 @@ public class QueryFieldTreeNodeRenderer extends Label implements TreeView.NodeRe
         if (node == null) {
             return;
         }
-        setText(((Field) ((TreeNode) node).getUserData()).getName());
+        if (node instanceof TreeNode) {
+            setText(((TreeNode) node).getText());
+            return;
+        }
+        throw new IllegalStateException();
     }
 
     @Override

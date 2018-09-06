@@ -6,6 +6,7 @@ import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
+import org.aplatanao.graphql.OfType;
 import org.aplatanao.graphql.Type;
 
 import java.util.Comparator;
@@ -18,15 +19,9 @@ public class QueryFieldTree extends TreeView {
 
     private Client client;
 
-    private Field field;
-
-    private Type type;
-
     public QueryFieldTree(QueryForm form, Client client, Field field) {
         this.form = form;
         this.client = client;
-        this.field = field;
-        this.type = client.getType(field.getType().getName());
 
         setTreeData(tree);
         setCheckmarksEnabled(true);
@@ -36,6 +31,7 @@ public class QueryFieldTree extends TreeView {
         getTreeViewNodeStateListeners().add(listener);
         getTreeViewBranchListeners().add(listener);
 
+        Type type = client.getType(field.getType().getName());
         type.getFields().stream()
                 .sorted(Comparator.comparing(Field::getName))
                 .forEach(f -> add(tree, f));
@@ -43,23 +39,60 @@ public class QueryFieldTree extends TreeView {
 
     private void add(TreeBranch tree, Field field) {
         Type type = client.getType(field.getType().getName());
-        if (type != null && "OBJECT".equals(type.getKind())) {
-            TreeBranch branch = new TreeBranch(field.getName());
-            branch.setUserData(field);
-            tree.add(branch);
-            return;
+        if (type != null) {
+            if ("OBJECT".equals(type.getKind())) {
+                addBranch(tree, field.getName() + " (" + type.getName() + ")", type);
+                return;
+            }
+            if ("SCALAR".equals(type.getKind()) || "ENUM".equals(type.getKind())) {
+                Type subType = client.getType(type.getName());
+                addNode(tree, subType, field.getName() + " (" + type.getName() + ")");
+                return;
+            }
+            throw new IllegalArgumentException("invalid type " + type);
         }
-        TreeNode node = new TreeNode(field.getName());
-        node.setUserData(field);
+        OfType ofType = field.getType().getOfType();
+        if (ofType != null) {
+            if ("LIST".equals(ofType.getKind())) {
+                if ("OBJECT".equals(ofType.getOfType().getKind())) {
+                    String name = ofType.getOfType().getName();
+                    addBranch(tree, field.getName() + " [" + name + "]", client.getType(name));
+                    return;
+                }
+                throw new IllegalArgumentException("invalid ofType LIST " + ofType);
+            }
+            if ("OBJECT".equals(ofType.getKind())) {
+                addBranch(tree, field.getName() + " (" + ofType.getName() + ")", client.getType(ofType.getName()));
+                return;
+            }
+            if ("SCALAR".equals(ofType.getKind()) || "ENUM".equals(ofType.getKind())) {
+                Type subType = client.getType(ofType.getName());
+                addNode(tree, subType, field.getName() + " (" + ofType.getName() + ")");
+                return;
+            }
+            throw new IllegalArgumentException("invalid ofType " + ofType);
+        }
+        throw new IllegalArgumentException("invalid field without type or ofType: " + field);
+    }
+
+    private void addNode(TreeBranch tree, Type scalarType, String text) {
+        TreeNode node = new TreeNode(text);
+        node.setUserData(scalarType);
         tree.add(node);
+    }
+
+    private void addBranch(TreeBranch tree, String name, Type type) {
+        TreeBranch branch = new TreeBranch(name);
+        branch.setUserData(type);
+        tree.add(branch);
     }
 
     public void loadSubBranchOnce(Sequence.Tree.Path path) {
         TreeBranch branch = (TreeBranch) Sequence.Tree.get(tree, path);
         if (branch.isEmpty()) {
-            Field field = (Field) branch.getUserData();
+            Type type = (Type) branch.getUserData();
 
-            client.getType(field.getType().getName()).getFields().stream()
+            client.getType(type.getName()).getFields().stream()
                     .sorted(Comparator.comparing(Field::getName))
                     .forEach(f -> {
                         try {
@@ -72,14 +105,7 @@ public class QueryFieldTree extends TreeView {
     }
 
     public void check(Sequence.Tree.Path path) {
-        TreeNode changed = Sequence.Tree.get(tree, path);
-        Field field = (Field) changed.getUserData();
-        if (changed instanceof TreeBranch) {
-            TreeBranch branch = (TreeBranch) changed;
-            System.out.println("add branch: " + branch.getText() + ", field: " + field.getName());
-            return;
-        }
-        System.out.println("add node: " + changed.getText());
+        System.out.println("check: " + path);
     }
 
 }

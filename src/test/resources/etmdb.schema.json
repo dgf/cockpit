@@ -9,13 +9,13 @@
           "name": "Query",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "cinemaDetail",
               "description": "The ID of the object",
               "type": {
-                "name": "CinemaDetailNode"
+                "name": "CinemaDetailNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -32,7 +32,8 @@
               "name": "allCinemaDetails",
               "description": null,
               "type": {
-                "name": "CinemaDetailNodeConnection"
+                "name": "CinemaDetailNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -73,7 +74,8 @@
               "name": "filmographyType",
               "description": "The ID of the object",
               "type": {
-                "name": "FilmographyTypeNode"
+                "name": "FilmographyTypeNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -90,7 +92,8 @@
               "name": "allFilmographyTypes",
               "description": null,
               "type": {
-                "name": "FilmographyTypeNodeConnection"
+                "name": "FilmographyTypeNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -131,7 +134,8 @@
               "name": "genreType",
               "description": "The ID of the object",
               "type": {
-                "name": "GenreTypeNode"
+                "name": "GenreTypeNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -148,7 +152,8 @@
               "name": "allGenreTypes",
               "description": null,
               "type": {
-                "name": "GenreTypeNodeConnection"
+                "name": "GenreTypeNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -189,7 +194,8 @@
               "name": "job",
               "description": "The ID of the object",
               "type": {
-                "name": "JobBoardNode"
+                "name": "JobBoardNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -206,7 +212,8 @@
               "name": "allJobs",
               "description": null,
               "type": {
-                "name": "JobBoardNodeConnection"
+                "name": "JobBoardNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -303,7 +310,8 @@
               "name": "company",
               "description": "The ID of the object",
               "type": {
-                "name": "CompanyNode"
+                "name": "CompanyNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -320,7 +328,8 @@
               "name": "allCompanies",
               "description": null,
               "type": {
-                "name": "CompanyNodeConnection"
+                "name": "CompanyNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -377,7 +386,8 @@
               "name": "jobsTag",
               "description": "The ID of the object",
               "type": {
-                "name": "JobTagNode"
+                "name": "JobTagNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -394,7 +404,8 @@
               "name": "allJobTags",
               "description": null,
               "type": {
-                "name": "JobTagNodeConnection"
+                "name": "JobTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -435,7 +446,8 @@
               "name": "newsTag",
               "description": "The ID of the object",
               "type": {
-                "name": "NewsTagNode"
+                "name": "NewsTagNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -452,7 +464,8 @@
               "name": "allNewsTags",
               "description": null,
               "type": {
-                "name": "NewsTagNodeConnection"
+                "name": "NewsTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -493,7 +506,8 @@
               "name": "news",
               "description": "The ID of the object",
               "type": {
-                "name": "NewsNode"
+                "name": "NewsNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -510,7 +524,8 @@
               "name": "allNews",
               "description": null,
               "type": {
-                "name": "NewsNodeConnection"
+                "name": "NewsNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -551,7 +566,8 @@
               "name": "role",
               "description": "The ID of the object",
               "type": {
-                "name": "RoleNode"
+                "name": "RoleNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -568,7 +584,8 @@
               "name": "allRoles",
               "description": null,
               "type": {
-                "name": "RoleNodeConnection"
+                "name": "RoleNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -609,7 +626,8 @@
               "name": "contentTag",
               "description": "The ID of the object",
               "type": {
-                "name": "ContentTagNode"
+                "name": "ContentTagNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -626,7 +644,8 @@
               "name": "allContentTags",
               "description": null,
               "type": {
-                "name": "ContentTagNodeConnection"
+                "name": "ContentTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -667,7 +686,8 @@
               "name": "cinemaSchedule",
               "description": "The ID of the object",
               "type": {
-                "name": "CinemaScheduleNode"
+                "name": "CinemaScheduleNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -684,7 +704,8 @@
               "name": "allCinemaSchedules",
               "description": null,
               "type": {
-                "name": "CinemaScheduleNodeConnection"
+                "name": "CinemaScheduleNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -725,7 +746,8 @@
               "name": "showtime",
               "description": "The ID of the object",
               "type": {
-                "name": "ShowtimeNode"
+                "name": "ShowtimeNode",
+                "ofType": null
               },
               "args": [
                 {
@@ -742,7 +764,8 @@
               "name": "allShowtimes",
               "description": null,
               "type": {
-                "name": "ShowtimeNodeConnection"
+                "name": "ShowtimeNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -783,7 +806,8 @@
               "name": "hello",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -793,13 +817,17 @@
           "name": "CinemaDetailNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -807,7 +835,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -815,7 +848,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -823,7 +861,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -831,7 +870,12 @@
               "name": "hallName",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -839,7 +883,12 @@
               "name": "numberOfSeats",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -847,7 +896,12 @@
               "name": "technology",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -855,7 +909,8 @@
               "name": "cinemascheduleSet",
               "description": null,
               "type": {
-                "name": "CinemaScheduleNodeConnection"
+                "name": "CinemaScheduleNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -898,53 +953,17 @@
           "name": "Node",
           "kind": "INTERFACE",
           "description": "An object with an ID",
-          "possibleTypes": [
-            {
-              "name": "CinemaDetailNode"
-            },
-            {
-              "name": "CinemaScheduleNode"
-            },
-            {
-              "name": "MovieMetaDataNode"
-            },
-            {
-              "name": "FilmographyTypeNode"
-            },
-            {
-              "name": "GenreTypeNode"
-            },
-            {
-              "name": "JobBoardNode"
-            },
-            {
-              "name": "CompanyNode"
-            },
-            {
-              "name": "JobTagNode"
-            },
-            {
-              "name": "ContentTagNode"
-            },
-            {
-              "name": "NewsTagNode"
-            },
-            {
-              "name": "NewsNode"
-            },
-            {
-              "name": "RoleNode"
-            },
-            {
-              "name": "ShowtimeNode"
-            }
-          ],
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -954,41 +973,41 @@
           "name": "ID",
           "kind": "SCALAR",
           "description": "The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `\"4\"`) or integer (such as `4`) input value will be accepted as an ID.",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "DateTime",
           "kind": "SCALAR",
           "description": "The `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "String",
           "kind": "SCALAR",
           "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "Int",
           "kind": "SCALAR",
           "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^53 - 1) and 2^53 - 1 since represented in JSON as double-precision floating point numbers specifiedby [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaScheduleNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -996,7 +1015,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "CinemaScheduleNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -1006,13 +1033,17 @@
           "name": "PageInfo",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "hasNextPage",
               "description": "When paginating forwards, are there more items?",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1020,7 +1051,12 @@
               "name": "hasPreviousPage",
               "description": "When paginating backwards, are there more items?",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1028,7 +1064,8 @@
               "name": "startCursor",
               "description": "When paginating backwards, the cursor to continue.",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1036,7 +1073,8 @@
               "name": "endCursor",
               "description": "When paginating forwards, the cursor to continue.",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -1046,20 +1084,19 @@
           "name": "Boolean",
           "kind": "SCALAR",
           "description": "The `Boolean` scalar type represents `true` or `false`.",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaScheduleNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "CinemaScheduleNode"
+                "name": "CinemaScheduleNode",
+                "ofType": null
               },
               "args": []
             },
@@ -1067,7 +1104,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -1077,13 +1119,17 @@
           "name": "CinemaScheduleNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Cinema Schedule.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1091,7 +1137,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1099,7 +1150,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1107,7 +1163,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1115,7 +1172,8 @@
               "name": "showStartDate",
               "description": "",
               "type": {
-                "name": "DateTime"
+                "name": "DateTime",
+                "ofType": null
               },
               "args": []
             },
@@ -1123,7 +1181,8 @@
               "name": "showEndDate",
               "description": "",
               "type": {
-                "name": "DateTime"
+                "name": "DateTime",
+                "ofType": null
               },
               "args": []
             },
@@ -1131,7 +1190,12 @@
               "name": "movie",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "MovieMetaDataNode",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1139,7 +1203,12 @@
               "name": "cinemaDetail",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "CinemaDetailNode",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -1149,13 +1218,17 @@
           "name": "MovieMetaDataNode",
           "kind": "OBJECT",
           "description": "\n    Represents a movie on EtMDB.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1163,7 +1236,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1171,7 +1249,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1179,7 +1262,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1187,7 +1271,12 @@
               "name": "movieTitle",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1195,7 +1284,12 @@
               "name": "releaseDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1203,7 +1297,12 @@
               "name": "durationMinutes",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1211,7 +1310,12 @@
               "name": "ageRestriction",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "MovieMetaDataAgeRestriction",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1219,7 +1323,12 @@
               "name": "budget",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1227,7 +1336,12 @@
               "name": "gross",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1235,7 +1349,12 @@
               "name": "originalLanguage",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1243,7 +1362,12 @@
               "name": "flagSeries",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1251,7 +1375,12 @@
               "name": "flagIncinema",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1259,7 +1388,12 @@
               "name": "plot",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1267,7 +1401,8 @@
               "name": "slogan",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1275,7 +1410,8 @@
               "name": "posterImage",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1283,7 +1419,8 @@
               "name": "cinemascheduleSet",
               "description": null,
               "type": {
-                "name": "CinemaScheduleNodeConnection"
+                "name": "CinemaScheduleNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -1326,20 +1463,23 @@
           "name": "MovieMetaDataAgeRestriction",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CinemaDetailNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1347,7 +1487,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "CinemaDetailNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -1357,13 +1505,13 @@
           "name": "CinemaDetailNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "CinemaDetailNode"
+                "name": "CinemaDetailNode",
+                "ofType": null
               },
               "args": []
             },
@@ -1371,7 +1519,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -1381,13 +1534,17 @@
           "name": "FilmographyTypeNode",
           "kind": "OBJECT",
           "description": "\n    Represents the types of filmographies.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1395,7 +1552,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1403,7 +1565,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1411,7 +1578,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1419,7 +1587,12 @@
               "name": "filmographyDescription",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1427,7 +1600,8 @@
               "name": "summary",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -1437,13 +1611,17 @@
           "name": "FilmographyTypeNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1451,7 +1629,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "FilmographyTypeNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -1461,13 +1647,13 @@
           "name": "FilmographyTypeNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "FilmographyTypeNode"
+                "name": "FilmographyTypeNode",
+                "ofType": null
               },
               "args": []
             },
@@ -1475,7 +1661,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -1485,13 +1676,17 @@
           "name": "GenreTypeNode",
           "kind": "OBJECT",
           "description": "\n    Represents the types of movie genres.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1499,7 +1694,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1507,7 +1707,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1515,7 +1720,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1523,7 +1729,12 @@
               "name": "genreDescription",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1531,7 +1742,8 @@
               "name": "summary",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -1541,13 +1753,17 @@
           "name": "GenreTypeNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1555,7 +1771,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "GenreTypeNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -1565,13 +1789,13 @@
           "name": "GenreTypeNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "GenreTypeNode"
+                "name": "GenreTypeNode",
+                "ofType": null
               },
               "args": []
             },
@@ -1579,7 +1803,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -1589,13 +1818,17 @@
           "name": "JobBoardNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for jobs listed on EtMDB.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1603,7 +1836,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1611,7 +1849,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1619,7 +1862,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1627,7 +1871,12 @@
               "name": "jobTitle",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1635,7 +1884,8 @@
               "name": "location",
               "description": "",
               "type": {
-                "name": "JobBoardLocation"
+                "name": "JobBoardLocation",
+                "ofType": null
               },
               "args": []
             },
@@ -1643,7 +1893,8 @@
               "name": "productionType",
               "description": "",
               "type": {
-                "name": "JobBoardProductionType"
+                "name": "JobBoardProductionType",
+                "ofType": null
               },
               "args": []
             },
@@ -1651,7 +1902,12 @@
               "name": "duration",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1659,7 +1915,8 @@
               "name": "productionDate",
               "description": "",
               "type": {
-                "name": "DateTime"
+                "name": "DateTime",
+                "ofType": null
               },
               "args": []
             },
@@ -1667,7 +1924,12 @@
               "name": "closingDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1675,7 +1937,12 @@
               "name": "description",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1683,7 +1950,8 @@
               "name": "salary",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1691,7 +1959,12 @@
               "name": "genderMf",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "JobBoardGenderMf",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1699,7 +1972,12 @@
               "name": "ageLevel",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "JobBoardAgeLevel",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1707,7 +1985,12 @@
               "name": "company",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "CompanyNode",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1715,7 +1998,8 @@
               "name": "jobtagSet",
               "description": null,
               "type": {
-                "name": "JobTagNodeConnection"
+                "name": "JobTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -1758,41 +2042,41 @@
           "name": "JobBoardLocation",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardProductionType",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardGenderMf",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardAgeLevel",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "CompanyNode",
           "kind": "OBJECT",
           "description": "\n    Represents the details for cinemas listed on EtMDB.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1800,7 +2084,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1808,7 +2097,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1816,7 +2110,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1824,7 +2119,12 @@
               "name": "companyName",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1832,7 +2132,12 @@
               "name": "establishedIn",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1840,7 +2145,12 @@
               "name": "description",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1848,7 +2158,12 @@
               "name": "opensAt",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Time",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1856,7 +2171,12 @@
               "name": "closesAt",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Time",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1864,7 +2184,8 @@
               "name": "companyPosterImage",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -1872,7 +2193,8 @@
               "name": "jobboardSet",
               "description": null,
               "type": {
-                "name": "JobBoardNodeConnection"
+                "name": "JobBoardNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -1971,20 +2293,23 @@
           "name": "Time",
           "kind": "SCALAR",
           "description": "The `Time` scalar type represents a Time value as\nspecified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "JobBoardNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -1992,7 +2317,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "JobBoardNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2002,13 +2335,13 @@
           "name": "JobBoardNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "JobBoardNode"
+                "name": "JobBoardNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2016,7 +2349,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2026,13 +2364,17 @@
           "name": "JobTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2040,7 +2382,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "JobTagNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2050,13 +2400,13 @@
           "name": "JobTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "JobTagNode"
+                "name": "JobTagNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2064,7 +2414,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2074,13 +2429,17 @@
           "name": "JobTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Job tag.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2088,7 +2447,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2096,7 +2460,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2104,7 +2473,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2112,7 +2482,12 @@
               "name": "jobBoard",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "JobBoardNode",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2120,7 +2495,12 @@
               "name": "contentTag",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ContentTagNode",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2130,13 +2510,17 @@
           "name": "ContentTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Content tag.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2144,7 +2528,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2152,7 +2541,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2160,7 +2554,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2168,7 +2563,12 @@
               "name": "keyword",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2176,15 +2576,17 @@
               "name": "summary",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
             {
-              "name": "newstagSet",
+              "name": "jobtagSet",
               "description": null,
               "type": {
-                "name": "NewsTagNodeConnection"
+                "name": "JobTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -2222,10 +2624,11 @@
               ]
             },
             {
-              "name": "jobtagSet",
+              "name": "newstagSet",
               "description": null,
               "type": {
-                "name": "JobTagNodeConnection"
+                "name": "NewsTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -2268,13 +2671,17 @@
           "name": "NewsTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2282,7 +2689,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "NewsTagNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2292,13 +2707,13 @@
           "name": "NewsTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "NewsTagNode"
+                "name": "NewsTagNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2306,7 +2721,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2316,13 +2736,17 @@
           "name": "NewsTagNode",
           "kind": "OBJECT",
           "description": "\n    Represents a News and Articles tags.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2330,7 +2754,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2338,7 +2767,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2346,7 +2780,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2354,7 +2789,12 @@
               "name": "news",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "NewsNode",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2362,7 +2802,12 @@
               "name": "contentTag",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ContentTagNode",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2372,13 +2817,17 @@
           "name": "NewsNode",
           "kind": "OBJECT",
           "description": "\n    Represents a News and Articles.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2386,7 +2835,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2394,7 +2848,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2402,7 +2861,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2410,7 +2870,12 @@
               "name": "title",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2418,7 +2883,12 @@
               "name": "content",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2426,7 +2896,8 @@
               "name": "newsImage",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2434,7 +2905,8 @@
               "name": "newstagSet",
               "description": null,
               "type": {
-                "name": "NewsTagNodeConnection"
+                "name": "NewsTagNodeConnection",
+                "ofType": null
               },
               "args": [
                 {
@@ -2477,13 +2949,17 @@
           "name": "CompanyNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2491,7 +2967,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "CompanyNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2501,13 +2985,13 @@
           "name": "CompanyNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "CompanyNode"
+                "name": "CompanyNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2515,7 +2999,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2525,13 +3014,17 @@
           "name": "NewsNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2539,7 +3032,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "NewsNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2549,13 +3050,13 @@
           "name": "NewsNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "NewsNode"
+                "name": "NewsNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2563,7 +3064,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2573,13 +3079,17 @@
           "name": "RoleNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Movie Roles for cast.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2587,7 +3097,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2595,7 +3110,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2603,7 +3123,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2611,7 +3132,12 @@
               "name": "roleDescription",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2619,7 +3145,8 @@
               "name": "summary",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -2629,13 +3156,17 @@
           "name": "RoleNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2643,7 +3174,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "RoleNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2653,13 +3192,13 @@
           "name": "RoleNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "RoleNode"
+                "name": "RoleNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2667,7 +3206,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2677,13 +3221,17 @@
           "name": "ContentTagNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2691,7 +3239,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ContentTagNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2701,13 +3257,13 @@
           "name": "ContentTagNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "ContentTagNode"
+                "name": "ContentTagNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2715,7 +3271,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2725,13 +3286,17 @@
           "name": "ShowtimeNode",
           "kind": "OBJECT",
           "description": "\n    Represents a Cinema Show times.\n    ",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "id",
               "description": "The ID of the object.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2739,7 +3304,12 @@
               "name": "createdDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2747,7 +3317,12 @@
               "name": "updatedDate",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2755,7 +3330,8 @@
               "name": "slug",
               "description": "",
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2763,7 +3339,12 @@
               "name": "showtime",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Time",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2771,7 +3352,12 @@
               "name": "dayOfWeek",
               "description": "",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "ShowtimeDayOfWeek",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2781,20 +3367,23 @@
           "name": "ShowtimeDayOfWeek",
           "kind": "ENUM",
           "description": null,
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "ShowtimeNodeConnection",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "pageInfo",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PageInfo",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2802,7 +3391,15 @@
               "name": "edges",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ShowtimeNodeEdge"
+                  }
+                }
               },
               "args": []
             }
@@ -2812,13 +3409,13 @@
           "name": "ShowtimeNodeEdge",
           "kind": "OBJECT",
           "description": null,
-          "possibleTypes": null,
           "fields": [
             {
               "name": "node",
               "description": "The item at the end of the edge",
               "type": {
-                "name": "ShowtimeNode"
+                "name": "ShowtimeNode",
+                "ofType": null
               },
               "args": []
             },
@@ -2826,7 +3423,12 @@
               "name": "cursor",
               "description": "A cursor for use in pagination",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             }
@@ -2836,13 +3438,20 @@
           "name": "__Schema",
           "kind": "OBJECT",
           "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "types",
               "description": "A list of all types supported by this server.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null
+                  }
+                }
               },
               "args": []
             },
@@ -2850,7 +3459,12 @@
               "name": "queryType",
               "description": "The type that query operations will be rooted at.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2858,7 +3472,8 @@
               "name": "mutationType",
               "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
               "type": {
-                "name": "__Type"
+                "name": "__Type",
+                "ofType": null
               },
               "args": []
             },
@@ -2866,7 +3481,8 @@
               "name": "subscriptionType",
               "description": "If this server support subscription, the type that subscription operations will be rooted at.",
               "type": {
-                "name": "__Type"
+                "name": "__Type",
+                "ofType": null
               },
               "args": []
             },
@@ -2874,7 +3490,15 @@
               "name": "directives",
               "description": "A list of all directives supported by this server.",
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null
+                  }
+                }
               },
               "args": []
             }
@@ -2884,13 +3508,17 @@
           "name": "__Type",
           "kind": "OBJECT",
           "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "kind",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "__TypeKind",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -2898,7 +3526,8 @@
               "name": "name",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2906,7 +3535,8 @@
               "name": "description",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -2914,7 +3544,15 @@
               "name": "fields",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Field"
+                  }
+                }
               },
               "args": [
                 {
@@ -2931,7 +3569,15 @@
               "name": "interfaces",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Type"
+                  }
+                }
               },
               "args": []
             },
@@ -2939,7 +3585,15 @@
               "name": "possibleTypes",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Type"
+                  }
+                }
               },
               "args": []
             },
@@ -2947,7 +3601,15 @@
               "name": "enumValues",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__EnumValue"
+                  }
+                }
               },
               "args": [
                 {
@@ -2964,7 +3626,15 @@
               "name": "inputFields",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__InputValue"
+                  }
+                }
               },
               "args": []
             },
@@ -2972,7 +3642,8 @@
               "name": "ofType",
               "description": null,
               "type": {
-                "name": "__Type"
+                "name": "__Type",
+                "ofType": null
               },
               "args": []
             }
@@ -2982,20 +3653,23 @@
           "name": "__TypeKind",
           "kind": "ENUM",
           "description": "An enum describing what kind of type a given `__Type` is",
-          "possibleTypes": null,
           "fields": null
         },
         {
           "name": "__Field",
           "kind": "OBJECT",
           "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3003,7 +3677,8 @@
               "name": "description",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -3011,7 +3686,15 @@
               "name": "args",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null
+                  }
+                }
               },
               "args": []
             },
@@ -3019,7 +3702,12 @@
               "name": "type",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3027,7 +3715,12 @@
               "name": "isDeprecated",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3035,7 +3728,8 @@
               "name": "deprecationReason",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -3045,13 +3739,17 @@
           "name": "__InputValue",
           "kind": "OBJECT",
           "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3059,7 +3757,8 @@
               "name": "description",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -3067,7 +3766,12 @@
               "name": "type",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3075,7 +3779,8 @@
               "name": "defaultValue",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -3085,13 +3790,17 @@
           "name": "__EnumValue",
           "kind": "OBJECT",
           "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3099,7 +3808,8 @@
               "name": "description",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -3107,7 +3817,12 @@
               "name": "isDeprecated",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3115,7 +3830,8 @@
               "name": "deprecationReason",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             }
@@ -3125,13 +3841,17 @@
           "name": "__Directive",
           "kind": "OBJECT",
           "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
-          "possibleTypes": null,
           "fields": [
             {
               "name": "name",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "args": []
             },
@@ -3139,7 +3859,8 @@
               "name": "description",
               "description": null,
               "type": {
-                "name": "String"
+                "name": "String",
+                "ofType": null
               },
               "args": []
             },
@@ -3147,7 +3868,15 @@
               "name": "locations",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null
+                  }
+                }
               },
               "args": []
             },
@@ -3155,7 +3884,15 @@
               "name": "args",
               "description": null,
               "type": {
-                "name": null
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null
+                  }
+                }
               },
               "args": []
             }
@@ -3165,7 +3902,6 @@
           "name": "__DirectiveLocation",
           "kind": "ENUM",
           "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
-          "possibleTypes": null,
           "fields": null
         }
       ]

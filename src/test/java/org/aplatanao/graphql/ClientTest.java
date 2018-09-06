@@ -77,7 +77,26 @@ public class ClientTest {
         assertThat(node, notNullValue());
         assertThat(node.getName(), is("Node"));
         assertThat(node.getKind(), is("INTERFACE"));
-        assertThat(node.getFields(), hasItem(hasProperty("name", equalTo("id"))));
+        assertThat(node.getFields(), hasItem(hasProperty("name", is("id"))));
+
+        Type newsNodeConnection = client.getType("NewsNodeConnection");
+        assertThat(newsNodeConnection, notNullValue());
+        assertThat(newsNodeConnection.getName(), is("NewsNodeConnection"));
+        assertThat(newsNodeConnection.getKind(), is("OBJECT"));
+
+        Field edges = newsNodeConnection.getFields().stream()
+                .filter(f -> f.getName().equals("edges"))
+                .findFirst().orElse(null);
+        assertThat(edges, notNullValue());
+
+        OfType edgeOfType = edges.getType().getOfType();
+        assertThat(edgeOfType, notNullValue());
+        assertThat(edgeOfType.getKind(), is("LIST"));
+
+        OfType listOfType = edgeOfType.getOfType();
+        assertThat(listOfType, notNullValue());
+        assertThat(listOfType.getKind(), is("OBJECT"));
+        assertThat(listOfType.getName(), is("NewsNodeEdge"));
     }
 
     @Test
@@ -93,12 +112,12 @@ public class ClientTest {
         assertThat(node, notNullValue());
         assertThat(node.getName(), is("Node"));
         assertThat(node.getKind(), is("INTERFACE"));
-        assertThat(node.getFields(), hasItem(hasProperty("name", equalTo("content"))));
+        assertThat(node.getFields(), hasItem(hasProperty("name", is("content"))));
 
         Type document = client.getType("Document");
         assertThat(document, notNullValue());
         assertThat(document.getName(), is("Document"));
         assertThat(document.getKind(), is("OBJECT"));
-        assertThat(document.getFields(), hasItem(hasProperty("name", equalTo("content"))));
+        assertThat(document.getFields(), hasItem(hasProperty("name", is("content"))));
     }
 }

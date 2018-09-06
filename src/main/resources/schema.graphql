@@ -7,14 +7,19 @@
       name
       kind
       description
-      possibleTypes {
-        name
-      }
       fields {
         name
         description
         type {
           name
+          ofType {
+            kind
+            name
+            ofType {
+              kind
+              name
+            }
+          }
         }
         args {
           name

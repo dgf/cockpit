@@ -9,7 +9,7 @@ public class Field {
 
     public String description;
 
-    public TypeRef type;
+    public FieldType type;
 
     public List<Argument> args = new ArrayList<>();
 
@@ -31,11 +31,11 @@ public class Field {
         return this;
     }
 
-    public TypeRef getType() {
+    public FieldType getType() {
         return type;
     }
 
-    public Field setType(TypeRef type) {
+    public Field setType(FieldType type) {
         this.type = type;
         return this;
     }
