@@ -6,9 +6,15 @@ public class Entry {
 
     private String value;
 
-    public Entry(String key, String value) {
-        this.key = key;
-        this.value = value;
+    private Storage storage;
+
+    public Entry(Storage storage) {
+        this.storage = storage;
+    }
+
+    public Entry save() {
+        storage.put(key, this);
+        return this;
     }
 
     public String getKey() {
@@ -26,6 +32,15 @@ public class Entry {
 
     public Entry setValue(String value) {
         this.value = value;
+        return this;
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public Entry setStorage(Storage storage) {
+        this.storage = storage;
         return this;
     }
 }

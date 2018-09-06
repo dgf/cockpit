@@ -1,19 +1,21 @@
 package org.aplatanao.context;
 
-import org.aplatanao.context.example.Application;
-import org.aplatanao.context.example.ServiceA;
-import org.aplatanao.context.example.ServiceB;
-import org.aplatanao.context.example.Storage;
+import org.aplatanao.context.example.*;
 import org.aplatanao.context.invalid.MultipleConstructor;
 import org.aplatanao.context.invalid.RecursiveRoot;
 import org.aplatanao.context.invalid.SelfReference;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ContextTest {
-    private Context context = new Context();
+    private Context context;
+
+    @BeforeEach
+    public void setup() {
+        context = new Context();
+    }
 
     @Test
     public void invalid() {
@@ -53,4 +55,24 @@ public class ContextTest {
         assertEquals("update", application.get("foo"));
     }
 
+    @Test
+    public void emptyFactory() {
+        Entry entry = context.create(Entry.class);
+        entry.setKey("one").setValue("two").save();
+
+        Storage storage = context.get(Storage.class);
+        assertNull(storage.get("one"));
+        assertNotSame(storage, entry.getStorage());
+    }
+
+    @Test
+    public void initializedFactory() {
+        Storage storage = context.get(Storage.class);
+
+        Entry entry = context.create(Entry.class);
+        entry.setKey("one").setValue("two").save();
+
+        assertEquals("two", storage.get("one").getValue());
+        assertSame(storage, entry.getStorage());
+    }
 }

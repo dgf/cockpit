@@ -10,7 +10,7 @@ public class Context extends HashMap<Class, Object> {
     public Context() {
         super();
         // self referencing instance
-        put(getClass(), this);
+        put(Context.class, this);
     }
 
     @SuppressWarnings("unchecked")
@@ -71,5 +71,11 @@ public class Context extends HashMap<Class, Object> {
             String message = "instantiation failure: " + e.getMessage();
             throw new ContextException(message, e);
         }
+    }
+
+    public <T> T create(Class<T> c) {
+        Context context = new Context();
+        context.putAll(this);
+        return context.get(c);
     }
 }
