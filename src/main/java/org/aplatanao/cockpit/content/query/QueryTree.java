@@ -2,6 +2,8 @@ package org.aplatanao.cockpit.content.query;
 
 import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.wtk.TreeView;
+import org.apache.pivot.wtk.TreeViewBranchListener;
+import org.apache.pivot.wtk.TreeViewNodeStateListener;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.Client;
@@ -11,7 +13,7 @@ import org.aplatanao.graphql.Type;
 
 import java.util.Comparator;
 
-public class QueryFieldTree extends TreeView {
+public class QueryTree extends TreeView implements TreeViewNodeStateListener, TreeViewBranchListener {
 
     private TreeBranch tree = new TreeBranch();
 
@@ -19,17 +21,16 @@ public class QueryFieldTree extends TreeView {
 
     private Client client;
 
-    public QueryFieldTree(QueryForm form, Client client, Field field) {
+    public QueryTree(QueryForm form, Client client, Field field) {
         this.form = form;
         this.client = client;
 
         setTreeData(tree);
         setCheckmarksEnabled(true);
         setShowMixedCheckmarkState(true);
-        setNodeRenderer(new QueryFieldTreeNodeRenderer());
-        QueryFieldTreeNodeListener listener = new QueryFieldTreeNodeListener();
-        getTreeViewNodeStateListeners().add(listener);
-        getTreeViewBranchListeners().add(listener);
+        setNodeRenderer(new QueryTreeRenderer());
+        getTreeViewNodeStateListeners().add(this);
+        getTreeViewBranchListeners().add(this);
 
         Type type = client.getType(field.getType().getName());
         type.getFields().stream()
@@ -104,8 +105,23 @@ public class QueryFieldTree extends TreeView {
         }
     }
 
-    public void check(Sequence.Tree.Path path) {
+    private void check(Sequence.Tree.Path path) {
         System.out.println("check: " + path);
     }
 
+
+    @Override
+    public void nodeCheckStateChanged(TreeView treeView, Sequence.Tree.Path path, TreeView.NodeCheckState previousCheckState) {
+        ((QueryTree) treeView).check(path);
+    }
+
+    @Override
+    public void branchExpanded(TreeView treeView, Sequence.Tree.Path path) {
+        ((QueryTree) treeView).loadSubBranchOnce(path);
+    }
+
+    @Override
+    public void branchCollapsed(TreeView treeView, Sequence.Tree.Path path) {
+
+    }
 }

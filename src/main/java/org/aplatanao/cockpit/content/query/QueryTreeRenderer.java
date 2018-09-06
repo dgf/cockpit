@@ -7,7 +7,7 @@ import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;
 
-public class QueryFieldTreeNodeRenderer extends Label implements TreeView.NodeRenderer {
+public class QueryTreeRenderer extends Label implements TreeView.NodeRenderer {
 
     @Override
     public void setSize(int width, int height) {
