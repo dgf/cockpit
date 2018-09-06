@@ -24,7 +24,7 @@ public class QueryContent extends TablePane {
 
         QueryForm form = new QueryForm(field);
         if ("OBJECT".equals(type.getKind())) {
-            main.add(new QueryFieldTree(form, client, type));
+            main.add(new QueryFieldTree(form, client, field));
         }
         main.add(form);
 

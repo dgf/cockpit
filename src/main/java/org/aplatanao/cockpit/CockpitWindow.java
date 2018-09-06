@@ -20,6 +20,6 @@ public class CockpitWindow extends Window {
     @Override
     public void open(Display display, Window ownerArgument) {
         super.open(display, ownerArgument);
-        System.out.println("navigation focus: " + navigation.requestFocus());
+        navigation.requestFocus();
     }
 }

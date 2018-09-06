@@ -19,14 +19,13 @@ public class NavigationRenderer extends Label implements TreeView.NodeRenderer {
         if (node == null) {
             return;
         }
+        setStyleName("active");
         TreeNode treeNode = (TreeNode) node;
         setText(treeNode.getText());
         Object data = treeNode.getUserData();
         if (data instanceof Client) {
             Client client = (Client) data;
-            if (client.isInitialized()) {
-                setStyleName("active");
-            } else {
+            if (!client.isInitialized()) {
                 setStyleName("inactive");
             }
         }

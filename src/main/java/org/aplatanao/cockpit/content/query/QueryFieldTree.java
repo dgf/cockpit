@@ -18,14 +18,24 @@ public class QueryFieldTree extends TreeView {
 
     private Client client;
 
-    public QueryFieldTree(QueryForm form, Client client, Type type) {
+    private Field field;
+
+    private Type type;
+
+    public QueryFieldTree(QueryForm form, Client client, Field field) {
         this.form = form;
         this.client = client;
+        this.field = field;
+        this.type = client.getType(field.getType().getName());
+
         setTreeData(tree);
         setCheckmarksEnabled(true);
         setShowMixedCheckmarkState(true);
         setNodeRenderer(new QueryFieldTreeNodeRenderer());
-        getTreeViewNodeStateListeners().add(new QueryFieldTreeNodeListener());
+        QueryFieldTreeNodeListener listener = new QueryFieldTreeNodeListener();
+        getTreeViewNodeStateListeners().add(listener);
+        getTreeViewBranchListeners().add(listener);
+
         type.getFields().stream()
                 .sorted(Comparator.comparing(Field::getName))
                 .forEach(f -> add(tree, f));
@@ -37,7 +47,6 @@ public class QueryFieldTree extends TreeView {
             TreeBranch branch = new TreeBranch(field.getName());
             branch.setUserData(field);
             tree.add(branch);
-            loadFieldsOnce(branch, field);
             return;
         }
         TreeNode node = new TreeNode(field.getName());
@@ -45,11 +54,20 @@ public class QueryFieldTree extends TreeView {
         tree.add(node);
     }
 
-    private void loadFieldsOnce(TreeBranch branch, Field field) {
+    public void loadSubBranchOnce(Sequence.Tree.Path path) {
+        TreeBranch branch = (TreeBranch) Sequence.Tree.get(tree, path);
         if (branch.isEmpty()) {
+            Field field = (Field) branch.getUserData();
+
             client.getType(field.getType().getName()).getFields().stream()
                     .sorted(Comparator.comparing(Field::getName))
-                    .forEach(f -> add(branch, f));
+                    .forEach(f -> {
+                        try {
+                            add(branch, f);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
         }
     }
 

@@ -53,6 +53,7 @@ public class Field {
     public String toString() {
         return "Field{" +
                 "name='" + name + '\'' +
+                ", type='" + type.getName() + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

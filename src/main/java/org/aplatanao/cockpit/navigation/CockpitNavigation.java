@@ -52,25 +52,7 @@ public class CockpitNavigation extends TreeView {
             @Override
             public void taskExecuted(Task<Boolean> task) {
                 if (task.getResult()) {
-                    TreeBranch types = new TreeBranch("types");
-                    for (Type type : client.getTypes().stream()
-                            .sorted(String::compareTo)
-                            .map(client::getType)
-                            .collect(Collectors.toList())) {
-                        TreeNode node = new TreeNode(type.getName());
-                        node.setUserData(type);
-                        types.add(node);
-                    }
-                    branch.add(types);
-
-                    TreeBranch queries = new TreeBranch("queries");
-                    for (Field query : client.getQueries()) {
-                        TreeNode node = new TreeNode(query.getName());
-                        node.setUserData(query);
-                        queries.add(node);
-                    }
-                    branch.add(queries);
-                    treeData.update(pos, branch);
+                    load(client, branch, pos);
                 }
             }
 
@@ -79,6 +61,28 @@ public class CockpitNavigation extends TreeView {
                 // report error?
             }
         }));
+    }
+
+    private void load(Client client, TreeBranch branch, int pos) {
+        TreeBranch types = new TreeBranch("types");
+        for (Type type : client.getTypes().stream()
+                .sorted(String::compareTo)
+                .map(client::getType)
+                .collect(Collectors.toList())) {
+            TreeNode node = new TreeNode(type.getName());
+            node.setUserData(type);
+            types.add(node);
+        }
+        branch.add(types);
+
+        TreeBranch queries = new TreeBranch("queries");
+        for (Field query : client.getQueries()) {
+            TreeNode node = new TreeNode(query.getName());
+            node.setUserData(query);
+            queries.add(node);
+        }
+        branch.add(queries);
+        treeData.update(pos, branch);
     }
 
 }
