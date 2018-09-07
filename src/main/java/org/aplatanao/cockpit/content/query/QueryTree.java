@@ -1,11 +1,16 @@
 package org.aplatanao.cockpit.content.query;
 
+import org.apache.pivot.collections.ArrayList;
+import org.apache.pivot.collections.List;
 import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.TreeViewBranchListener;
 import org.apache.pivot.wtk.TreeViewNodeStateListener;
+import org.apache.pivot.wtk.TreeViewSelectionListener;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
+import org.aplatanao.cockpit.crumb.CockpitCrumbs;
+import org.aplatanao.cockpit.overview.CockpitOverview;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.OfType;
@@ -13,17 +18,21 @@ import org.aplatanao.graphql.Type;
 
 import java.util.Comparator;
 
-public class QueryTree extends TreeView implements TreeViewNodeStateListener, TreeViewBranchListener {
+public class QueryTree extends TreeView implements TreeViewNodeStateListener, TreeViewBranchListener, TreeViewSelectionListener {
 
     private TreeBranch tree = new TreeBranch();
 
     private QueryForm form;
 
     private Client client;
+    private CockpitOverview overview;
+    private CockpitCrumbs crumbs;
 
-    public QueryTree(QueryForm form, Client client, Field field) {
+    public QueryTree(QueryForm form, Client client, Field field, CockpitOverview overview, CockpitCrumbs crumbs) {
         this.form = form;
         this.client = client;
+        this.overview = overview;
+        this.crumbs = crumbs;
 
         setTreeData(tree);
         setCheckmarksEnabled(true);
@@ -31,6 +40,7 @@ public class QueryTree extends TreeView implements TreeViewNodeStateListener, Tr
         setNodeRenderer(new QueryTreeRenderer());
         getTreeViewNodeStateListeners().add(this);
         getTreeViewBranchListeners().add(this);
+        getTreeViewSelectionListeners().add(this);
 
         Type type = client.getType(field.getType().getName());
         type.getFields().stream()
@@ -122,6 +132,37 @@ public class QueryTree extends TreeView implements TreeViewNodeStateListener, Tr
 
     @Override
     public void branchCollapsed(TreeView treeView, Sequence.Tree.Path path) {
+
+    }
+
+    @Override
+    public void selectedPathAdded(TreeView treeView, Sequence.Tree.Path path) {
+
+    }
+
+    @Override
+    public void selectedPathRemoved(TreeView treeView, Sequence.Tree.Path path) {
+
+    }
+
+    @Override
+    public void selectedPathsChanged(TreeView treeView, Sequence<Sequence.Tree.Path> previousSelectedPaths) {
+        Sequence.Tree.Path path = treeView.getSelectedPath();
+        List<TreeNode> nodes = new ArrayList<>();
+
+        List<?> treeData = treeView.getTreeData();
+        for (Integer i : path) {
+            Object root = treeData.get(i);
+            if (root instanceof TreeBranch) {
+                treeData = (List<?>) root;
+            }
+            nodes.add((TreeNode) root);
+        }
+        crumbs.show(nodes);
+    }
+
+    @Override
+    public void selectedNodeChanged(TreeView treeView, Object previousSelectedNode) {
 
     }
 }

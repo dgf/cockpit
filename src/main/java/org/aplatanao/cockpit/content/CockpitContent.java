@@ -1,26 +1,25 @@
 package org.aplatanao.cockpit.content;
 
-import org.apache.pivot.collections.Sequence;
-import org.apache.pivot.util.Vote;
-import org.apache.pivot.wtk.Button;
 import org.apache.pivot.wtk.Component;
 import org.apache.pivot.wtk.TabPane;
-import org.apache.pivot.wtk.TabPaneListener;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
+import org.aplatanao.cockpit.content.query.QueryContent;
+import org.aplatanao.context.Context;
 import org.aplatanao.graphql.Client;
+import org.aplatanao.graphql.Field;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class CockpitContent extends TabPane  {
-
-    private ContentFactory factory;
+public class CockpitContent extends TabPane {
 
     private Map<TreeNode, Component> tabs = new HashMap<>();
 
-    public CockpitContent(ContentFactory factory) {
-        this.factory = factory;
+    private Context context;
+
+    public CockpitContent(Context context) {
+        this.context = context;
         setStyleName("content");
         setCloseable(true);
         getTabPaneListeners().add(new CockpitContentListener(tabs));
@@ -44,13 +43,25 @@ public class CockpitContent extends TabPane  {
             return;
         }
 
-        Component component = factory.getComponent(getParentClient(node), node.getUserData());
-        if (component != null) {
+        Client client = getParentClient(node);
+        if (client == null) {
+            return;
+        }
+
+        Object data = node.getUserData();
+        if (data instanceof Field) {
+            Context factory = context.createFactory();
+            factory.put(Client.class, client);
+            factory.put(Field.class, data);
+            factory.get(QueryContent.class);
+
+            QueryContent component = factory.get(QueryContent.class);
             getTabs().add(component);
             TabPane.setTabData(component, node.getText());
             setSelectedTab(component);
             tabs.put(node, component);
         }
+
     }
 
 }
