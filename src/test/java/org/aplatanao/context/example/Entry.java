@@ -1,5 +1,7 @@
 package org.aplatanao.context.example;
 
+import org.aplatanao.context.Context;
+
 public class Entry {
 
     private String key;
@@ -8,8 +10,14 @@ public class Entry {
 
     private Storage storage;
 
-    public Entry(Storage storage) {
+    private StringReverser reverser;
+
+    private Context context;
+
+    public Entry(Storage storage, StringReverser reverser, Context context) {
         this.storage = storage;
+        this.reverser = reverser;
+        this.context = context;
     }
 
     public Entry save() {
@@ -30,6 +38,11 @@ public class Entry {
         return value;
     }
 
+    public String getReverseValue() {
+        return reverser.reverse(value);
+    }
+
+
     public Entry setValue(String value) {
         this.value = value;
         return this;
@@ -41,6 +54,25 @@ public class Entry {
 
     public Entry setStorage(Storage storage) {
         this.storage = storage;
+        return this;
+    }
+
+    public StringReverser getReverser() {
+        return reverser;
+    }
+
+    public Entry setReverser(StringReverser reverser) {
+        this.reverser = reverser;
+        return this;
+    }
+
+
+    public Context getContext() {
+        return context;
+    }
+
+    public Entry setContext(Context context) {
+        this.context = context;
         return this;
     }
 }

@@ -19,7 +19,8 @@ public class Application {
     }
 
     public void set(String key, String value) {
-        serviceA.add(new Entry(null).setKey(key).setValue(value));
+        // TODO use factory inside example context
+        serviceA.add(new Entry(null, null, null).setKey(key).setValue(value));
     }
 
     public ServiceA getServiceA() {

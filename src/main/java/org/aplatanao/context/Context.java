@@ -7,22 +7,38 @@ import java.util.*;
 
 public class Context extends HashMap<Class, Object> {
 
+    protected Context parent;
+
     public Context() {
         super();
-        // self referencing instance
-        put(Context.class, this);
+    }
+
+    private void setParent(Context parent) {
+        this.parent = parent;
+    }
+
+    private Context getParent() {
+        return parent;
     }
 
     @SuppressWarnings("unchecked")
     public <T> T get(Class<T> c) {
+        if (parent != null && parent.containsKey(c)) {
+            return (T) parent.get(c);
+        }
         if (super.containsKey(c)) {
             return (T) super.get(c);
         }
-        return _get(new HashSet<>(), c);
+        return _get(this, new HashSet<>(), c);
     }
 
     @SuppressWarnings("unchecked")
-    private <T> T _get(Collection<Class> classes, Class<T> c) {
+    private <T> T _get(Class<T> c) {
+        return (T) super.get(c);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static <T> T _get(Context context, Collection<Class> classes, Class<T> c) {
         Constructor[] constructors = c.getDeclaredConstructors();
 
         if (constructors.length != 1) {
@@ -49,15 +65,28 @@ public class Context extends HashMap<Class, Object> {
                 throw new ContextException(message);
             }
 
+            // self reference the factory context
+            if (type == Context.class) {
+                objects.add((T) context);
+                continue;
+            }
+
+            // get from parent in factory usage
+            if (context.getParent() != null && context.getParent().containsKey(type)) {
+                objects.add((T) context.getParent().get(type));
+                continue;
+            }
+
             // get instance and use it as object parameter
-            Object instance = super.get(type);
+            Object instance = context._get(type);
             if (instance == null) {
                 // store it for recursive check
                 classes.add(type);
 
-                instance = _get(classes, type);
-                super.put(type, instance);
+                instance = _get(context, classes, type);
+                context.put(type, instance);
 
+                // remove it from recursive check
                 classes.remove(type);
             }
             objects.add(instance);
@@ -65,17 +94,19 @@ public class Context extends HashMap<Class, Object> {
 
         try {
             Object instance = constructor.newInstance(objects.toArray());
-            put(c, instance);
+            context.put(c, instance);
             return (T) instance;
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+        } catch (InstantiationException | IllegalAccessException |
+                InvocationTargetException e) {
             String message = "instantiation failure: " + e.getMessage();
             throw new ContextException(message, e);
         }
+
     }
 
-    public <T> T create(Class<T> c) {
-        Context context = new Context();
-        context.putAll(this);
-        return context.get(c);
+    public Context createFactory() {
+        Context factory = new Context();
+        factory.setParent(this);
+        return factory;
     }
 }

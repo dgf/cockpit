@@ -56,23 +56,22 @@ public class ContextTest {
     }
 
     @Test
-    public void emptyFactory() {
-        Entry entry = context.create(Entry.class);
-        entry.setKey("one").setValue("two").save();
-
+    public void factory() {
         Storage storage = context.get(Storage.class);
-        assertNull(storage.get("one"));
-        assertNotSame(storage, entry.getStorage());
-    }
+        Context factory = context.createFactory();
 
-    @Test
-    public void initializedFactory() {
-        Storage storage = context.get(Storage.class);
+        // save factory specific instance
+        StringReverser reverser = new StringReverser();
+        factory.put(StringReverser.class, reverser);
 
-        Entry entry = context.create(Entry.class);
+        Entry entry = factory.get(Entry.class);
         entry.setKey("one").setValue("two").save();
+        assertEquals("owt", entry.getReverseValue());
+
+        assertSame(storage, entry.getStorage());
+        assertSame(reverser, entry.getReverser());
+        assertSame(factory, entry.getContext());
 
         assertEquals("two", storage.get("one").getValue());
-        assertSame(storage, entry.getStorage());
     }
 }
