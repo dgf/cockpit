@@ -1,49 +1,38 @@
 package org.aplatanao.cockpit.content.query;
 
-import org.apache.pivot.collections.ArrayList;
-import org.apache.pivot.collections.List;
 import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.wtk.TreeView;
-import org.apache.pivot.wtk.TreeViewBranchListener;
-import org.apache.pivot.wtk.TreeViewNodeStateListener;
-import org.apache.pivot.wtk.TreeViewSelectionListener;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.crumb.CockpitCrumbs;
-import org.aplatanao.cockpit.overview.CockpitOverview;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.OfType;
 import org.aplatanao.graphql.Type;
 
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
-public class QueryTree extends TreeView implements TreeViewNodeStateListener, TreeViewBranchListener, TreeViewSelectionListener {
+public class QueryTree extends TreeView {
 
     private TreeBranch tree = new TreeBranch();
 
-    private QueryForm form;
-
     private Client client;
-    private CockpitOverview overview;
-    private CockpitCrumbs crumbs;
 
-    public QueryTree(QueryForm form, Client client, Field field, CockpitOverview overview, CockpitCrumbs crumbs) {
-        this.form = form;
+    public QueryTree(QueryTreeRenderer renderer, QueryTreeListener listener, Client client, Field field) {
         this.client = client;
-        this.overview = overview;
-        this.crumbs = crumbs;
 
         setTreeData(tree);
         setCheckmarksEnabled(true);
         setShowMixedCheckmarkState(true);
-        setNodeRenderer(new QueryTreeRenderer());
-        getTreeViewNodeStateListeners().add(this);
-        getTreeViewBranchListeners().add(this);
-        getTreeViewSelectionListeners().add(this);
 
-        Type type = client.getType(field.getType().getName());
-        type.getFields().stream()
+        setNodeRenderer(renderer);
+
+        getComponentKeyListeners().add(listener);
+        getTreeViewNodeStateListeners().add(listener);
+        getTreeViewBranchListeners().add(listener);
+        getTreeViewSelectionListeners().add(listener);
+
+        client.getType(field.getType().getName()).getFields().stream()
                 .sorted(Comparator.comparing(Field::getName))
                 .forEach(f -> add(tree, f));
     }
@@ -102,67 +91,16 @@ public class QueryTree extends TreeView implements TreeViewNodeStateListener, Tr
         TreeBranch branch = (TreeBranch) Sequence.Tree.get(tree, path);
         if (branch.isEmpty()) {
             Type type = (Type) branch.getUserData();
-
-            client.getType(type.getName()).getFields().stream()
+            for (Field field : client.getType(type.getName()).getFields().stream()
                     .sorted(Comparator.comparing(Field::getName))
-                    .forEach(f -> {
-                        try {
-                            add(branch, f);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    });
+                    .collect(Collectors.toList())) {
+                add(branch, field);
+            }
         }
     }
 
-    private void check(Sequence.Tree.Path path) {
+    public void check(Sequence.Tree.Path path) {
         System.out.println("check: " + path);
     }
 
-
-    @Override
-    public void nodeCheckStateChanged(TreeView treeView, Sequence.Tree.Path path, TreeView.NodeCheckState previousCheckState) {
-        ((QueryTree) treeView).check(path);
-    }
-
-    @Override
-    public void branchExpanded(TreeView treeView, Sequence.Tree.Path path) {
-        ((QueryTree) treeView).loadSubBranchOnce(path);
-    }
-
-    @Override
-    public void branchCollapsed(TreeView treeView, Sequence.Tree.Path path) {
-
-    }
-
-    @Override
-    public void selectedPathAdded(TreeView treeView, Sequence.Tree.Path path) {
-
-    }
-
-    @Override
-    public void selectedPathRemoved(TreeView treeView, Sequence.Tree.Path path) {
-
-    }
-
-    @Override
-    public void selectedPathsChanged(TreeView treeView, Sequence<Sequence.Tree.Path> previousSelectedPaths) {
-        Sequence.Tree.Path path = treeView.getSelectedPath();
-        List<TreeNode> nodes = new ArrayList<>();
-
-        List<?> treeData = treeView.getTreeData();
-        for (Integer i : path) {
-            Object root = treeData.get(i);
-            if (root instanceof TreeBranch) {
-                treeData = (List<?>) root;
-            }
-            nodes.add((TreeNode) root);
-        }
-        crumbs.show(nodes);
-    }
-
-    @Override
-    public void selectedNodeChanged(TreeView treeView, Object previousSelectedNode) {
-
-    }
 }

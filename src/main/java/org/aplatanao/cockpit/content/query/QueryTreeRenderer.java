@@ -4,8 +4,6 @@ import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.wtk.Label;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.graphql.Field;
-import org.aplatanao.graphql.Type;
 
 public class QueryTreeRenderer extends Label implements TreeView.NodeRenderer {
 
