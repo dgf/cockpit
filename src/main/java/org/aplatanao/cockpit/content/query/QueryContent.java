@@ -4,7 +4,7 @@ import org.apache.pivot.wtk.BoxPane;
 import org.apache.pivot.wtk.Orientation;
 import org.apache.pivot.wtk.ScrollPane;
 import org.apache.pivot.wtk.TablePane;
-import org.aplatanao.context.Context;
+import org.aplatanao.dimpl.Context;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
 import org.aplatanao.graphql.Type;

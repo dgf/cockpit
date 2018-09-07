@@ -5,7 +5,7 @@ import org.apache.pivot.wtk.TabPane;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.cockpit.content.query.QueryContent;
-import org.aplatanao.context.Context;
+import org.aplatanao.dimpl.Context;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
 
