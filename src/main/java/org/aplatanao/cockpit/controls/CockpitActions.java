@@ -7,8 +7,6 @@ public class CockpitActions extends BoxPane {
 
     public CockpitActions() {
         setStyleName("actions");
-        add(new PushButton("start"));
-        add(new PushButton("pause"));
-        add(new PushButton("stop"));
+        add(new PushButton("refresh"));
     }
 }
