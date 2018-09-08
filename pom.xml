@@ -58,7 +58,7 @@
 
     <repositories>
         <repository>
-            <id>mvn-repo</id>
+            <id>aplatanao-repository</id>
             <url>https://rawgit.com/dgf/artifacts/master</url>
             <releases>
                 <enabled>true</enabled>
