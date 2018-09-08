@@ -59,6 +59,7 @@ public class CockpitNavigation extends TreeView {
             @Override
             public void executeFailed(Task<Boolean> task) {
                 // report error?
+                throw new IllegalArgumentException("failed: " + client.getStatus());
             }
         }));
     }
