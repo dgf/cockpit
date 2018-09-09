@@ -5,7 +5,7 @@ import org.apache.pivot.wtk.Label;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeNode;
 
-public class QueryTreeRenderer extends Label implements TreeView.NodeRenderer {
+public class TypeRenderer extends Label implements TreeView.NodeRenderer {
 
     @Override
     public void setSize(int width, int height) {

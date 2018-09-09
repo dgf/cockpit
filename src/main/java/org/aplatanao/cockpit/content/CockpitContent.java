@@ -8,6 +8,7 @@ import org.aplatanao.cockpit.content.query.QueryContent;
 import org.aplatanao.dimpl.Context;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
+import org.aplatanao.graphql.Type;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ public class CockpitContent extends TabPane {
         this.context = context;
         setStyleName("content");
         setCloseable(true);
-        getTabPaneListeners().add(new CockpitContentListener(tabs));
+        getTabPaneListeners().add(new ContentListener(tabs));
     }
 
     private Client getParentClient(TreeNode node) {
@@ -50,10 +51,12 @@ public class CockpitContent extends TabPane {
 
         Object data = node.getUserData();
         if (data instanceof Field) {
+            Field field = (Field) data;
+
             Context factory = context.createFactory();
             factory.put(Client.class, client);
-            factory.put(Field.class, data);
-            factory.get(QueryContent.class);
+            factory.put(Field.class, field);
+            factory.put(Type.class, client.getType(field.getType().getName()));
 
             QueryContent component = factory.get(QueryContent.class);
             getTabs().add(component);

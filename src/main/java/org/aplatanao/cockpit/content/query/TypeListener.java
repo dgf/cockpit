@@ -9,22 +9,22 @@ import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.cockpit.crumb.CockpitCrumbs;
 import org.aplatanao.cockpit.tree.CockpitTreeListener;
 
-public class QueryTreeListener extends CockpitTreeListener implements TreeViewNodeStateListener, TreeViewBranchListener {
+public class TypeListener extends CockpitTreeListener implements TreeViewNodeStateListener, TreeViewBranchListener {
 
     private CockpitCrumbs crumbs;
 
-    public QueryTreeListener(CockpitCrumbs crumbs) {
+    public TypeListener(CockpitCrumbs crumbs) {
         this.crumbs = crumbs;
     }
 
     @Override
     public void nodeCheckStateChanged(TreeView treeView, Sequence.Tree.Path path, TreeView.NodeCheckState previousCheckState) {
-        ((QueryTree) treeView).check(path);
+        ((TypeTree) treeView).check(path);
     }
 
     @Override
     public void branchExpanded(TreeView treeView, Sequence.Tree.Path path) {
-        ((QueryTree) treeView).loadSubBranchOnce(path);
+        ((TypeTree) treeView).loadSubBranchOnce(path);
     }
 
     @Override

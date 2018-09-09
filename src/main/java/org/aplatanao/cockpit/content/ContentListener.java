@@ -10,11 +10,11 @@ import org.apache.pivot.wtk.content.TreeNode;
 
 import java.util.Map;
 
-public class CockpitContentListener implements TabPaneListener {
+public class ContentListener implements TabPaneListener {
 
     private Map<TreeNode, Component> tabs;
 
-    public CockpitContentListener(Map<TreeNode, Component> tabs) {
+    public ContentListener(Map<TreeNode, Component> tabs) {
         this.tabs = tabs;
     }
 

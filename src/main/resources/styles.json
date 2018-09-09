@@ -33,6 +33,17 @@
   },
   "query": {
   },
+  "field-tree": {
+    "padding": 0
+  },
+  "field-branch": {
+    "padding": {
+      "top": 0,
+      "left": 23,
+      "bottom": 0,
+      "right": 0
+    }
+  },
   "preview": {
   }
 }
