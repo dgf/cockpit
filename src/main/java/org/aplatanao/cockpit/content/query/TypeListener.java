@@ -6,16 +6,9 @@ import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.TreeViewBranchListener;
 import org.apache.pivot.wtk.TreeViewNodeStateListener;
 import org.apache.pivot.wtk.content.TreeNode;
-import org.aplatanao.cockpit.crumb.CockpitCrumbs;
 import org.aplatanao.cockpit.tree.CockpitTreeListener;
 
 public class TypeListener extends CockpitTreeListener implements TreeViewNodeStateListener, TreeViewBranchListener {
-
-    private CockpitCrumbs crumbs;
-
-    public TypeListener(CockpitCrumbs crumbs) {
-        this.crumbs = crumbs;
-    }
 
     @Override
     public void nodeCheckStateChanged(TreeView treeView, Sequence.Tree.Path path, TreeView.NodeCheckState previousCheckState) {
@@ -34,12 +27,11 @@ public class TypeListener extends CockpitTreeListener implements TreeViewNodeSta
 
     @Override
     protected void enter(List<TreeNode> nodes) {
-        crumbs.show(nodes);
+
     }
 
     @Override
     protected void enter(TreeNode node) {
 
     }
-
 }

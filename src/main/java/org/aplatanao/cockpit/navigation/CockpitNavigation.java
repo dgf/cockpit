@@ -39,7 +39,7 @@ public class CockpitNavigation extends TreeView {
     }
 
     public void addAPI(API api) throws URISyntaxException {
-        Client client = new Client(api);
+        Client client = Client.create(api);
 
         TreeNode preview = new TreeNode(api.name);
         preview.setUserData(client);
