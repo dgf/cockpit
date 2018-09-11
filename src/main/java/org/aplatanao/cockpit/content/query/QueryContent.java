@@ -6,7 +6,7 @@ import org.aplatanao.graphql.Type;
 
 public class QueryContent extends TablePane {
 
-    public QueryContent(Context context, QueryPreview preview, Type type) {
+    public QueryContent(Context context, Type type) {
         setStyleName("query");
 
         TablePane.Column stretch = new TablePane.Column();
@@ -41,7 +41,7 @@ public class QueryContent extends TablePane {
             Row previewRow = new Row();
             previewRow.setHeight(-1);
             getRows().add(previewRow);
-            previewRow.add(preview);
+            previewRow.add(context.get(QueryPreview.class));
         }
     }
 }

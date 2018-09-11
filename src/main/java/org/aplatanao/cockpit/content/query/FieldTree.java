@@ -41,4 +41,9 @@ public class FieldTree extends FieldBranch {
         TreeNode branch = Sequence.Tree.get(tree, path);
         ((FieldBranch) branch.getUserData()).setVisible(visible);
     }
+
+    // enclose the query parent with curly brackets
+    public String toString() {
+        return "{" + super.toString() + "}";
+    }
 }

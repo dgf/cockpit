@@ -8,6 +8,7 @@ import org.apache.pivot.wtk.TaskAdapter;
 import org.apache.pivot.wtk.TreeView;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
+import org.aplatanao.cockpit.tasks.InitClientTask;
 import org.aplatanao.graphql.API;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;

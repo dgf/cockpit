@@ -23,7 +23,6 @@ public class CockpitContent extends TabPane {
         this.context = context;
         setStyleName("content");
         setCloseable(true);
-        getTabPaneListeners().add(new ContentListener(tabs));
     }
 
     private Client getParentClient(TreeNode node) {

@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.navigation;
+package org.aplatanao.cockpit.tasks;
 
 import org.apache.pivot.util.concurrent.Task;
 import org.apache.pivot.util.concurrent.TaskExecutionException;
@@ -14,7 +14,11 @@ public class InitClientTask extends Task<Boolean> {
 
     @Override
     public Boolean execute() throws TaskExecutionException {
-        client.init();
+        try {
+            client.init();
+        } catch (Exception e) {
+            throw new TaskExecutionException(e);
+        }
         return client.isInitialized();
     }
 }
