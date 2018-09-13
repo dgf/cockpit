@@ -67,9 +67,7 @@ public class CockpitContent extends TabPane implements TabPaneListener {
             TabPane.setTabData(component, node.getText());
             setSelectedTab(component);
             tabs.put(node, component);
-            //reverse.put(component, node);
         }
-
     }
 
     @Override
@@ -92,7 +90,14 @@ public class CockpitContent extends TabPane implements TabPaneListener {
         for (int t = 0; t < tabs.getLength(); t++) {
             this.tabs.values().remove(tabs.get(t));
         }
-        // activate the last one - TBD detect and activate the next or previous one
+        if (this.tabs.size() == 0) {
+            return; // empty
+        }
+        if (index < this.tabs.size()) {
+            setSelectedTab(this.get(index)); // after the last
+            return;
+        }
+        // the last one
         setSelectedTab(this.get(this.getTabs().getLength() - 1));
     }
 
