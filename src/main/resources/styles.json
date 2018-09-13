@@ -33,8 +33,18 @@
   },
   "query": {
   },
+  "tree-title": {
+    "font": {
+      "bold": true
+    }
+  },
   "field-tree": {
-    "padding": 0
+    "padding": {
+      "top": 0,
+      "left": 3,
+      "bottom": 0,
+      "right": 0
+    }
   },
   "field-branch": {
     "padding": {
@@ -42,6 +52,16 @@
       "left": 23,
       "bottom": 0,
       "right": 0
+    }
+  },
+  "field-title": {
+    "font": {
+      "bold": true
+    }
+  },
+  "field-description": {
+    "font": {
+      "italic": true
     }
   },
   "preview": {

@@ -1,64 +1,117 @@
 package org.aplatanao.cockpit.content.query;
 
 import org.apache.pivot.wtk.*;
-import org.aplatanao.graphql.Argument;
-import org.aplatanao.graphql.Field;
+import org.aplatanao.graphql.*;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 public class FieldBranch extends BoxPane {
 
-    private Field field;
+    private FieldType fieldType;
 
-    private Form.Section arguments = new Form.Section();
+    private Client client;
+
+    private Form.Section argumentSection = new Form.Section();
 
     private BoxPane fields = new BoxPane(Orientation.VERTICAL);
 
-    public FieldBranch(Field field) {
-        this.field = field;
+    private Form argumentsForm = new Form();
+
+    private Checkbox fieldCheckbox = new Checkbox();
+
+    public FieldBranch(Client client, Field field) {
+        this.client = client;
+        this.fieldType = getType(field);
+
         setOrientation(Orientation.VERTICAL);
         setStyleName("field-branch");
-        setVisible(false);
 
-        String title = field.getName();
+        List<Argument> arguments = field.getArgs().stream()
+                .sorted(Comparator.comparing(Argument::getName))
+                .collect(Collectors.toList());
+
+        BoxPane fieldHeader = new BoxPane(Orientation.HORIZONTAL);
+        add(fieldHeader);
+
+        fieldHeader.add(fieldCheckbox);
+        fieldCheckbox.getButtonPressListeners().add((e) -> {
+            if (!arguments.isEmpty()) {
+                argumentsForm.setVisible(!argumentsForm.isVisible());
+            }
+            if (fields.getLength() > 0) {
+                fields.setVisible(!fields.isVisible());
+            }
+            if (fieldType.hasSubFields() && fields.getLength() == 0) {
+                for (Field subField : fieldType.getType().getFields().stream()
+                        .sorted(Comparator.comparing(Field::getName))
+                        .collect(Collectors.toList())) {
+                    fields.add(new FieldBranch(client, subField));
+                }
+            }
+        });
+
+        Label titleLabel = new Label(field.getName());
+        titleLabel.setStyleName("field-title");
+        fieldHeader.add(titleLabel);
+
         String description = field.getDescription();
         if (description != null && !description.isEmpty()) {
-            title += ": " + description;
+            Label descLabel = new Label(description);
+            descLabel.setStyleName("field-description");
+            fieldHeader.add(descLabel);
         }
 
-        add(new Label(title));
-        addArguments(field);
+        if (!arguments.isEmpty()) {
+            add(argumentsForm);
+            argumentsForm.setVisible(false);
+            argumentsForm.getSections().add(argumentSection);
+            for (Argument a : arguments) {
+                TextInput input = new TextInput();
+                Form.setLabel(input, a.getName());
+                argumentSection.add(input);
+            }
+        }
+
         add(fields);
     }
 
-    public FieldBranch addField(Field field) {
-        FieldBranch branch = new FieldBranch(field);
-        fields.add(branch);
-        return branch;
+    public boolean isFieldEnabled() {
+        return fieldCheckbox.isSelected();
     }
 
-    private void addArguments(Field field) {
-        Form form = new Form();
-        form.getSections().add(arguments);
-        for (Argument a : field.getArgs().stream()
-                .sorted(Comparator.comparing(Argument::getName))
-                .collect(Collectors.toList())) {
-            TextInput input = new TextInput();
-            Form.setLabel(input, a.getName());
-            arguments.add(input);
+    private FieldType getType(Field field) {
+        boolean isList = false;
+
+        Type type = client.getType(field.getType().getName());
+        if (type == null) {
+            OfType ofType = field.getType().getOfType();
+            if (ofType != null) {
+                if ("LIST".equals(ofType.getKind())) {
+                    if ("OBJECT".equals(ofType.getOfType().getKind())) {
+                        isList = true;
+                        type = client.getType(ofType.getOfType().getName());
+                    }
+                } else {
+                    type = client.getType(ofType.getName());
+                }
+            }
         }
-        add(form);
+        if (type == null) {
+            throw new IllegalArgumentException("invalid " + field);
+        }
+        return new FieldType().setList(isList).setType(type).setField(field);
     }
 
     // recursive query build
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(field.getName());
+        builder.append(fieldType.getField().getName());
 
         StringJoiner argsBuilder = new StringJoiner(", ");
-        for (Component component : arguments) {
+        for (Component component : argumentSection) {
             TextInput input = (TextInput) component;
             String text = input.getText();
             if (!text.isEmpty()) {
@@ -75,7 +128,7 @@ public class FieldBranch extends BoxPane {
         StringJoiner fieldBuilder = new StringJoiner(" ");
         for (Component component : fields) {
             FieldBranch branch = (FieldBranch) component;
-            if (branch.isVisible()) { // recursive
+            if (branch.isFieldEnabled()) { // recursive
                 fieldBuilder.add(branch.toString());
             }
         }

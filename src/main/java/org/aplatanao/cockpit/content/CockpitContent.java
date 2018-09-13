@@ -1,7 +1,11 @@
 package org.aplatanao.cockpit.content;
 
+import org.apache.pivot.collections.Sequence;
+import org.apache.pivot.util.Vote;
+import org.apache.pivot.wtk.Button;
 import org.apache.pivot.wtk.Component;
 import org.apache.pivot.wtk.TabPane;
+import org.apache.pivot.wtk.TabPaneListener;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.cockpit.content.query.QueryContent;
@@ -13,7 +17,7 @@ import org.aplatanao.graphql.Type;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CockpitContent extends TabPane {
+public class CockpitContent extends TabPane implements TabPaneListener {
 
     private Map<TreeNode, Component> tabs = new HashMap<>();
 
@@ -23,6 +27,7 @@ public class CockpitContent extends TabPane {
         this.context = context;
         setStyleName("content");
         setCloseable(true);
+        getTabPaneListeners().add(this);
     }
 
     private Client getParentClient(TreeNode node) {
@@ -62,8 +67,52 @@ public class CockpitContent extends TabPane {
             TabPane.setTabData(component, node.getText());
             setSelectedTab(component);
             tabs.put(node, component);
+            //reverse.put(component, node);
         }
 
     }
 
+    @Override
+    public void tabInserted(TabPane tabPane, int index) {
+
+    }
+
+    @Override
+    public Vote previewRemoveTabs(TabPane tabPane, int index, int count) {
+        return Vote.APPROVE;
+    }
+
+    @Override
+    public void removeTabsVetoed(TabPane tabPane, Vote reason) {
+
+    }
+
+    @Override
+    public void tabsRemoved(TabPane tabPane, int index, Sequence<Component> tabs) {
+        for (int t = 0; t < tabs.getLength(); t++) {
+            this.tabs.values().remove(tabs.get(t));
+        }
+        // activate the last one - TBD detect and activate the next or previous one
+        setSelectedTab(this.get(this.getTabs().getLength() - 1));
+    }
+
+    @Override
+    public void cornerChanged(TabPane tabPane, Component previousCorner) {
+
+    }
+
+    @Override
+    public void tabDataRendererChanged(TabPane tabPane, Button.DataRenderer previousTabDataRenderer) {
+
+    }
+
+    @Override
+    public void closeableChanged(TabPane tabPane) {
+
+    }
+
+    @Override
+    public void collapsibleChanged(TabPane tabPane) {
+
+    }
 }

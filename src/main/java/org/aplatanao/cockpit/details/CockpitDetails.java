@@ -40,7 +40,7 @@ public class CockpitDetails extends TabPane {
 
         getTabs().add(scroll);
         count++;
-        TabPane.setTabData(response, "Response (" + count + ")");
+        TabPane.setTabData(scroll, "Response (" + count + ")");
         setSelectedTab(scroll);
     }
 

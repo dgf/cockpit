@@ -15,28 +15,14 @@ public class QueryContent extends TablePane {
 
         if ("OBJECT".equals(type.getKind())) {
             FieldTree fields = context.get(FieldTree.class);
-            TypeTree types = context.get(TypeTree.class);
-
-            ScrollPane typeScroll = new ScrollPane();
-            typeScroll.setView(types);
-            Border typeBorder = new Border();
-            typeBorder.setContent(typeScroll);
 
             ScrollPane fieldScroll = new ScrollPane();
             fieldScroll.setView(fields);
-            Border fieldBorder = new Border();
-            fieldBorder.setContent(fieldScroll);
-
-            SplitPane main = new SplitPane();
-            main.setOrientation(Orientation.HORIZONTAL);
-            main.setSplitRatio(0.37f);
-            main.setLeft(typeBorder);
-            main.setRight(fieldBorder);
 
             Row mainRow = new Row();
             mainRow.setHeight("1*");
             getRows().add(mainRow);
-            mainRow.add(main);
+            mainRow.add(fieldScroll);
 
             Row previewRow = new Row();
             previewRow.setHeight(-1);
