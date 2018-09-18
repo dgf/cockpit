@@ -15,13 +15,16 @@ public class RequestField extends BoxPane {
 
     private Type type;
 
+    private Client client;
+
+    private Field field;
+
+    private TextInput alias = new TextInput();
+
     private BoxPane fields = new BoxPane(Orientation.VERTICAL);
 
     private BoxPane arguments = new BoxPane(Orientation.VERTICAL);
 
-    private Client client;
-
-    private Field field;
 
     public RequestField(Client client, Field field) {
         this.client = client;
@@ -51,6 +54,10 @@ public class RequestField extends BoxPane {
 
         BoxPane header = new BoxPane(Orientation.HORIZONTAL);
         add(header);
+
+        alias.setText(field.getName());
+        header.add(alias);
+        header.add(new Label(":"));
 
         Label titleLabel = new Label(field.getName());
         titleLabel.setStyleName("field-title");
@@ -123,7 +130,7 @@ public class RequestField extends BoxPane {
             Checkbox checkbox = (Checkbox) box.getNamedComponent("checkbox");
             RequestField field = (RequestField) box.getNamedComponent("field");
             if (selectedOnly) {
-                if  (checkbox.isSelected()) {
+                if (checkbox.isSelected()) {
                     box.setVisible(true);
                     checkbox.setEnabled(false);
                     field.recursiveSelectedOnly(selectedOnly);
@@ -144,6 +151,11 @@ public class RequestField extends BoxPane {
     // recursive query build
     public String toString() {
         StringBuilder builder = new StringBuilder();
+
+        if (!field.getName().equals(alias.getText())) {
+            builder.append(alias.getText());
+            builder.append(":");
+        }
         builder.append(field.getName());
 
         StringJoiner argsBuilder = new StringJoiner(",");
