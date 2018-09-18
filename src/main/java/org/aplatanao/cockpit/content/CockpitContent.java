@@ -5,6 +5,7 @@ import org.apache.pivot.wtk.TabPane;
 import org.apache.pivot.wtk.content.TreeBranch;
 import org.apache.pivot.wtk.content.TreeNode;
 import org.aplatanao.cockpit.content.query.QueryContent;
+import org.aplatanao.cockpit.content.request.RequestContent;
 import org.aplatanao.dimpl.Context;
 import org.aplatanao.graphql.Client;
 import org.aplatanao.graphql.Field;
@@ -57,7 +58,7 @@ public class CockpitContent extends TabPane {
             factory.put(Field.class, field);
             factory.put(Type.class, client.getType(field.getType().getName()));
 
-            QueryContent component = factory.get(QueryContent.class);
+            RequestContent component = factory.get(RequestContent.class);
             getTabs().add(component);
             TabPane.setTabData(component, node.getText());
             setSelectedTab(component);

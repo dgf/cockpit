@@ -31,32 +31,24 @@
   "active": {
     "color": "black"
   },
-  "query": {
+  "request-content": {
   },
-  "tree-title": {
-    "font": {
-      "bold": true
-    }
+  "request-editor": {
   },
-  "field-tree": {
-    "padding": {
-      "top": 0,
-      "left": 3,
-      "bottom": 0,
-      "right": 0
-    }
+  "request-root": {
   },
-  "field-branch": {
-    "padding": {
-      "top": 0,
-      "left": 23,
-      "bottom": 0,
-      "right": 0
-    }
+  "request-field": {
+  },
+  "request-preview": {
   },
   "field-title": {
     "font": {
       "bold": true
+    }
+  },
+  "field-type": {
+    "font": {
+      "underscore": true
     }
   },
   "field-description": {
@@ -64,6 +56,19 @@
       "italic": true
     }
   },
-  "preview": {
+  "argument-title": {
+    "font": {
+      "bold": true
+    }
+  },
+  "argument-type": {
+    "font": {
+      "underscore": true
+    }
+  },
+  "argument-description": {
+    "font": {
+      "italic": true
+    }
   }
 }

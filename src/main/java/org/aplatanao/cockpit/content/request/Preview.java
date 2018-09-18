@@ -1,4 +1,4 @@
-package org.aplatanao.cockpit.content.query;
+package org.aplatanao.cockpit.content.request;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.apache.pivot.util.concurrent.Task;
@@ -10,18 +10,18 @@ import org.aplatanao.graphql.Client;
 
 import java.io.IOException;
 
-public class QueryPreview extends TablePane {
+public class Preview extends TablePane {
 
-    public QueryPreview(Client client, FieldTree tree, CockpitDetails details) {
-        setStyleName("preview");
+    public Preview(Client client, Editor editor, CockpitDetails details) {
+        setStyleName("request-preview");
 
         TextArea preview = new TextArea();
-        preview.setText(tree.toString());
+        preview.setText(editor.toString());
 
         BoxPane buttons = new BoxPane(Orientation.VERTICAL);
 
         PushButton refreshButton = new PushButton("Refresh");
-        refreshButton.getButtonPressListeners().add(b -> preview.setText(tree.toString()));
+        refreshButton.getButtonPressListeners().add(b -> preview.setText(editor.toString()));
         buttons.add(refreshButton);
 
         PushButton requestButton = new PushButton("Request");
@@ -45,11 +45,11 @@ public class QueryPreview extends TablePane {
         );
         buttons.add(requestButton);
 
-        TablePane.Column stretch = new TablePane.Column();
+        Column stretch = new Column();
         stretch.setWidth("1*");
         getColumns().add(stretch);
 
-        TablePane.Column right = new TablePane.Column();
+        Column right = new Column();
         right.setWidth(-1);
         getColumns().add(right);
 
