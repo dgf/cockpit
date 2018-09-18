@@ -7,3 +7,5 @@ tagline: GraphQL endpoint explorer
 # Aplatanao Cockpit
 
 GraphQL endpoint explorer
+
+## Examples
