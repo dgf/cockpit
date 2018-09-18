@@ -1,5 +1,9 @@
 ---
 layout: page
 title: Aplatanao Cockpit
-description: GraphQL endpoint explorer
+tagline: GraphQL endpoint explorer
 ---
+
+# Aplatanao Cockpit
+
+GraphQL endpoint explorer
