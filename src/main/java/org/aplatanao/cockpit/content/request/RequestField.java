@@ -13,6 +13,8 @@ public class RequestField extends BoxPane {
 
     private boolean once = false;
 
+    private int count = 1;
+
     private Type type;
 
     private Client client;
@@ -24,7 +26,6 @@ public class RequestField extends BoxPane {
     private BoxPane fields = new BoxPane(Orientation.VERTICAL);
 
     private BoxPane arguments = new BoxPane(Orientation.VERTICAL);
-
 
     public RequestField(Client client, Field field) {
         this.client = client;
@@ -88,19 +89,21 @@ public class RequestField extends BoxPane {
             for (Field subField : type.getFields().stream()
                     .sorted(Comparator.comparing(Field::getName))
                     .collect(Collectors.toList())) {
-                RequestField requestField = new RequestField(client, subField);
-                requestField.setName("field");
-                Checkbox checkbox = new Checkbox();
-                checkbox.getButtonPressListeners().add((e) -> {
-                    requestField.toggle();
+                SubField sf = new SubField(client, subField);
+                sf.setAction("+", e -> {
+                    SubField next = new SubField(client, subField);
+                    next.getRequestField().setAlias(subField.getName() + count++);
+                    next.setAction("-", ne -> fields.remove(next));
+                    next.setCheckedEnabled(true);
+                    fields.insert(next, fields.indexOf(sf) + 1);
                 });
-                checkbox.setName("checkbox");
-                BoxPane pane = new BoxPane(Orientation.HORIZONTAL);
-                pane.add(checkbox);
-                pane.add(requestField);
-                fields.add(pane);
+                fields.add(sf);
             }
         }
+    }
+
+    public void setAlias(String alias) {
+        this.alias.setText(alias);
     }
 
     public void toggle() {
@@ -126,23 +129,20 @@ public class RequestField extends BoxPane {
 
     public void recursiveSelectedOnly(boolean selectedOnly) {
         for (Component fieldComponent : fields) {
-            BoxPane box = (BoxPane) fieldComponent;
-            Checkbox checkbox = (Checkbox) box.getNamedComponent("checkbox");
-            RequestField field = (RequestField) box.getNamedComponent("field");
+            SubField subField = (SubField) fieldComponent;
             if (selectedOnly) {
-                if (checkbox.isSelected()) {
-                    box.setVisible(true);
-                    checkbox.setEnabled(false);
-                    field.recursiveSelectedOnly(selectedOnly);
+                if (subField.isCheckedSelected()) {
+                    subField.setCheckedEnabled(false);
+                    subField.getRequestField().recursiveSelectedOnly(selectedOnly);
                 } else {
-                    box.setVisible(false);
+                    subField.setVisible(false);
                 }
             } else {
-                if (!box.isVisible()) {
-                    box.setVisible(true);
+                if (!subField.isVisible()) {
+                    subField.setVisible(true);
                 } else {
-                    checkbox.setEnabled(true);
-                    field.recursiveSelectedOnly(selectedOnly);
+                    subField.setCheckedEnabled(true);
+                    subField.getRequestField().recursiveSelectedOnly(selectedOnly);
                 }
             }
         }
@@ -174,11 +174,9 @@ public class RequestField extends BoxPane {
 
         StringJoiner fieldBuilder = new StringJoiner(" ");
         for (Component fieldComponent : fields) {
-            BoxPane box = (BoxPane) fieldComponent;
-            Checkbox checkbox = (Checkbox) box.getNamedComponent("checkbox");
-            RequestField field = (RequestField) box.getNamedComponent("field");
-            if (checkbox.isSelected()) { // recursive
-                fieldBuilder.add(field.toString());
+            SubField subField = (SubField) fieldComponent;
+            if (subField.isCheckedSelected()) { // recursive
+                fieldBuilder.add(subField.getRequestField().toString());
             }
         }
         if (fieldBuilder.length() > 0) {
